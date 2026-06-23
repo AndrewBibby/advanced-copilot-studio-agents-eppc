@@ -1,6 +1,6 @@
-# Lab 4 — Workflow Checkpoint
+# Lab 4 — Workflow Approval Gates
 
-**Module 4 · Workflow checkpoint & orchestration · ~45 min · 3 exercises (≤20 min each)**
+**Module 4 · Workflow approval gates · ~45 min · 3 exercises (≤20 min each)**
 
 ## Objective
 
@@ -68,4 +68,4 @@ Request for Information (RFI) · structured inputs · AI Approvals · multi-stag
 - Add an "ask vs. inform" follow-up and note the difference (ask = two-way and waits; inform = one-way).
 - Wire the approval outcome back into the agent's reply so the user sees the decision and reason.
 
-➡ Next: **[Lab 5 — Monitor in Copilot Studio + Agent 365, then iterate](lab-05-monitor-evaluate-iterate.md)** · See also **[Lab 6 — the same HITL task in the new UI](lab-06-old-vs-new-ui.md)**
+➡ Next: **[Lab 5 — Monitoring, Testing & Iteration](lab-05-monitoring-testing-iteration.md)** · See also **[Lab 6 — the same HITL task in the new UI](lab-06-old-vs-new-ui.md)**

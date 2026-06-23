@@ -1,6 +1,6 @@
-# Lab 5 — Monitor in Copilot Studio + Agent 365, then Iterate
+# Lab 5 — Monitoring, Testing & Iteration
 
-**Module 5 · Test, monitor, evaluate & improve · ~60 min · 3 exercises (≤20 min each)**
+**Module 5 · Monitoring, testing & iteration · ~60 min · 3 exercises (≤20 min each)**
 
 ## Objective
 

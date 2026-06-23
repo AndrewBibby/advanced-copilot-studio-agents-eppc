@@ -1,6 +1,6 @@
-# Lab 1 — Refine Prompts: Agent & Topic Level
+# Lab 1 — Instruction Tuning & Grounding
 
-**Module 1 · Designing reliable agents · ~60 min · 3 exercises (≤20 min each)**
+**Module 1 · Instruction tuning & grounding · ~60 min · 3 exercises (≤20 min each)**
 
 ## Objective
 
@@ -69,4 +69,4 @@ Agent instructions · topic-level generative answers · moderation level · grou
 - Reduce response length in Generative AI settings and observe the effect on quality.
 - Capture your 5 questions as the seed of a **test set** you'll automate in Lab 5.
 
-➡ Next: **[Lab 2 — Extend with Dataverse MCP & tools](lab-02-dataverse-mcp-tools.md)** · See also **[Lab 6 — the same prompt-refinement task in the new UI](lab-06-old-vs-new-ui.md)**
+➡ Next: **[Lab 2 — Dataverse MCP & Least-Privilege Data Access](lab-02-dataverse-mcp-least-privilege.md)** · See also **[Lab 6 — the same prompt-refinement task in the new UI](lab-06-old-vs-new-ui.md)**

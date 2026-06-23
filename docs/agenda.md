@@ -5,11 +5,11 @@ A full day, structured into five modules that follow the lifecycle of an agent �
 | # | Module | Lab | Duration | Exercises |
 |---|--------|-----|----------|-----------|
 | — | New Copilot Studio UI — changes & new features | — | 15 min | — |
-| 01 | Designing reliable agents | Lab 1 | 60 min | 3 × 20 min |
-| 02 | Extending agents — tools & data | Lab 2 | 75 min | 4 × ≤20 min |
-| 03 | Governing & securing agents | Lab 3 | 60 min | 3 × 20 min |
-| 04 | Workflow checkpoint & orchestration | Lab 4 | 45 min | 3 × ≤20 min |
-| 05 | Test, monitor, evaluate & improve | Lab 5 | 60 min | 3 × 20 min |
+| 01 | Designing reliable agents | Lab 1 — Instruction Tuning & Grounding | 60 min | 3 × 20 min |
+| 02 | Extending agents — tools & data | Lab 2 — Dataverse MCP & Least-Privilege Data Access | 75 min | 4 × ≤20 min |
+| 03 | Governing & securing agents | Lab 3 — Authentication, DLP & Entitlement | 60 min | 3 × 20 min |
+| 04 | Workflow checkpoint & orchestration | Lab 4 — Workflow Approval Gates | 45 min | 3 × ≤20 min |
+| 05 | Test, monitor, evaluate & improve | Lab 5 — Monitoring, Testing & Iteration | 60 min | 3 × 20 min |
 | ✦ | Old UI → New UI (cross-cutting / optional) | Lab 6 | 60 min | 3 × ≤20 min |
 
 ---
@@ -44,7 +44,7 @@ Other changes worth knowing on day one:
 - **Choosing the right tool** — Agent Builder vs. Copilot Studio vs. Microsoft Foundry; declarative vs. custom-engine agents; conversational vs. autonomous.
 - **Multi-agent design** — orchestrator + specialists; child vs. connected agents; the "Russian doll" pattern.
 
-➡ **[Lab 1 — Refine prompts at agent & topic level](../labs/lab-01-refine-prompts.md)**
+➡ **[Lab 1 — Instruction Tuning & Grounding](../labs/lab-01-instruction-tuning-grounding.md)**
 
 ---
 
@@ -61,7 +61,7 @@ Other changes worth knowing on day one:
 - **Bring Microsoft Foundry in** — Foundry models (BYOM) and connected Foundry agents.
 - **Multi-agent orchestration** — the Single Response Principle and ten rules that keep delegation clean.
 
-➡ **[Lab 2 — Extend with Dataverse MCP & tools](../labs/lab-02-dataverse-mcp-tools.md)**
+➡ **[Lab 2 — Dataverse MCP & Least-Privilege Data Access](../labs/lab-02-dataverse-mcp-least-privilege.md)**
 
 ---
 
@@ -79,7 +79,7 @@ Other changes worth knowing on day one:
 - **Cost control** — Copilot Credits, the agent usage estimator, design levers that move consumption.
 - **Visibility** — Copilot Dashboard, PPAC analytics, Agent 365, Purview, Sentinel.
 
-➡ **[Lab 3 — Secure agent tools & connections](../labs/lab-03-secure-agent-tools.md)**
+➡ **[Lab 3 — Authentication, DLP & Entitlement](../labs/lab-03-auth-dlp-entitlement.md)**
 
 ---
 
@@ -94,7 +94,7 @@ Other changes worth knowing on day one:
 - **AI Approvals** — auto-approve low-risk requests, escalate exceptions, keep a human override with captured explanations for audit.
 - **Express Mode** for agent-triggered workflows that must finish within the 2-minute limit.
 
-➡ **[Lab 4 — Workflow checkpoint](../labs/lab-04-workflow-checkpoint.md)**
+➡ **[Lab 4 — Workflow Approval Gates](../labs/lab-04-workflow-approval-gates.md)**
 
 ---
 
@@ -109,7 +109,7 @@ Other changes worth knowing on day one:
 - **Monitor in two places** — per-agent Copilot Studio analytics and fleet-wide Agent 365 observability.
 - **The agentic improvement loop** — Analyze → Adjust → Re-test → Ship & repeat.
 
-➡ **[Lab 5 — Monitor in Copilot Studio + Agent 365, then iterate](../labs/lab-05-monitor-evaluate-iterate.md)**
+➡ **[Lab 5 — Monitoring, Testing & Iteration](../labs/lab-05-monitoring-testing-iteration.md)**
 
 ---
 
@@ -117,6 +117,6 @@ Other changes worth knowing on day one:
 
 *The same tasks in the new agent experience.*
 
-The 2026 new experience replaces topics/triggers/node logic with a single instructions-driven agent on one surface (**Build · Preview · Evaluate · Monitor**). This optional lab re-creates **Lab 1** (prompt refinement, using **Instructions + a Skill** instead of topics) and **Lab 4** (workflow checkpoint, using the new **Workflows** designer + **agent node**), so attendees can map what they already know in Classic onto the new UI — and decide which experience to use for which job. Remember: **no migration path** between Classic and New.
+The 2026 new experience replaces topics/triggers/node logic with a single instructions-driven agent on one surface (**Build · Preview · Evaluate · Monitor**). This optional lab re-creates **Lab 1** (instruction tuning and grounding, using **Instructions + a Skill** instead of topics) and **Lab 4** (workflow approval gates, using the new **Workflows** designer + **agent node**), so attendees can map what they already know in Classic onto the new UI — and decide which experience to use for which job. Remember: **no migration path** between Classic and New.
 
 ➡ **[Lab 6 — Old UI → New UI](../labs/lab-06-old-vs-new-ui.md)**

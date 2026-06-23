@@ -14,7 +14,7 @@ This full-day workshop is aimed at technical makers, developers and solution arc
 
 From there we move into the challenges that appear once agents leave the demo stage and reach production. Based on real-world projects, we cover authentication and authorisation, cost control and usage limits, and how to design effective human-in-the-loop flows. You will also learn how to use Dataverse with an MCP server, and how to bring services like Microsoft Foundry and Azure AI Search into Copilot Studio in a controlled, practical way. The day follows the natural lifecycle of an agent — design → testing → operation → evaluation.
 
-The workshop is structured into clear modules, each supported by hands-on labs and guided exercises. Labs cover refining prompts at agent and topic level, securing agent tools, monitoring behaviour in Copilot Studio and the Agent 365 workspace, and refining agent functionality over time.
+The workshop is structured into clear modules, each supported by hands-on labs and guided exercises. Labs cover instruction tuning and grounding, Dataverse MCP access, identity and DLP controls, workflow approval gates, and monitoring plus iterative improvement.
 
 ### Key takeaways
 
@@ -40,14 +40,14 @@ Every lab is split into **short exercises of no more than 20 minutes each**, so 
 | # | Module | Lab | Duration | Exercises |
 |---|--------|-----|----------|-----------|
 | — | New Copilot Studio UI — changes & new features | — | 15 min | — |
-| 01 | [Designing reliable agents](docs/agenda.md#module-1) | [Lab 1](labs/lab-01-refine-prompts.md) | 60 min | 3 × 20 min |
-| 02 | [Extending agents — tools & data](docs/agenda.md#module-2) | [Lab 2](labs/lab-02-dataverse-mcp-tools.md) | 75 min | 4 × ≤20 min |
-| 03 | [Governing & securing agents](docs/agenda.md#module-3) | [Lab 3](labs/lab-03-secure-agent-tools.md) | 60 min | 3 × 20 min |
-| 04 | [Workflow checkpoint & orchestration](docs/agenda.md#module-4) | [Lab 4](labs/lab-04-workflow-checkpoint.md) | 45 min | 3 × ≤20 min |
-| 05 | [Test, monitor, evaluate & improve](docs/agenda.md#module-5) | [Lab 5](labs/lab-05-monitor-evaluate-iterate.md) | 60 min | 3 × 20 min |
+| 01 | [Designing reliable agents](docs/agenda.md#module-1) | [Lab 1 — Instruction Tuning & Grounding](labs/lab-01-instruction-tuning-grounding.md) | 60 min | 3 × 20 min |
+| 02 | [Extending agents — tools & data](docs/agenda.md#module-2) | [Lab 2 — Dataverse MCP & Least-Privilege Data Access](labs/lab-02-dataverse-mcp-least-privilege.md) | 75 min | 4 × ≤20 min |
+| 03 | [Governing & securing agents](docs/agenda.md#module-3) | [Lab 3 — Authentication, DLP & Entitlement](labs/lab-03-auth-dlp-entitlement.md) | 60 min | 3 × 20 min |
+| 04 | [Workflow checkpoint & orchestration](docs/agenda.md#module-4) | [Lab 4 — Workflow Approval Gates](labs/lab-04-workflow-approval-gates.md) | 45 min | 3 × ≤20 min |
+| 05 | [Test, monitor, evaluate & improve](docs/agenda.md#module-5) | [Lab 5 — Monitoring, Testing & Iteration](labs/lab-05-monitoring-testing-iteration.md) | 60 min | 3 × 20 min |
 | ✦ | Old UI → New UI (cross-cutting) | [Lab 6](labs/lab-06-old-vs-new-ui.md) | 60 min | 3 × ≤20 min |
 
-> **Before you arrive:** complete **[Lab 0 — Environment Setup](labs/lab-00-environment-setup.md)** to provision a free Power Apps Developer Plan environment (with Dataverse) and a Copilot Studio trial. This takes ~20–30 minutes (short exercises, none over 20 min) and removes the biggest source of delay on the day.
+> **Before you arrive:** complete **[Lab 0 — Environment Setup](labs/lab-00-environment-setup.md)** to provision a free Power Apps Developer Plan environment (with Dataverse) and a Copilot Studio trial. This takes ~20–30 minutes and removes the biggest source of delay on the day.
 
 > **Optional / time-permitting:** **[Lab 6 — Old UI → New UI](labs/lab-06-old-vs-new-ui.md)** re-creates Lab 1 and Lab 4 in the new agent experience so attendees see exactly how the new Build surface, Skills and Workflows map to the Classic topics/flows they already know.
 
@@ -62,11 +62,11 @@ advanced-copilot-studio-training/
 │   └── agenda.md              ← module-by-module overview & timing
 ├── labs/
 │   ├── lab-00-environment-setup.md     ← DO THIS FIRST (trial sign-up)
-│   ├── lab-01-refine-prompts.md
-│   ├── lab-02-dataverse-mcp-tools.md
-│   ├── lab-03-secure-agent-tools.md
-│   ├── lab-04-workflow-checkpoint.md
-│   ├── lab-05-monitor-evaluate-iterate.md
+│   ├── lab-01-instruction-tuning-grounding.md
+│   ├── lab-02-dataverse-mcp-least-privilege.md
+│   ├── lab-03-auth-dlp-entitlement.md
+│   ├── lab-04-workflow-approval-gates.md
+│   ├── lab-05-monitoring-testing-iteration.md
 │   └── lab-06-old-vs-new-ui.md         ← redo Lab 1 & Lab 4 in the new UI
 └── artifacts/                 ← copy-ready templates & checklists
     ├── agent-instructions-template.md

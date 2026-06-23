@@ -123,4 +123,4 @@ If you don't belong to an organisation tenant, get a **free Microsoft 365 develo
 - Power Platform admin center: <https://admin.powerplatform.microsoft.com>
 - Microsoft 365 Developer Program: <https://developer.microsoft.com/microsoft-365/dev-program>
 
-➡ Next: **[Lab 1 — Refine prompts at agent & topic level](lab-01-refine-prompts.md)**
+➡ Next: **[Lab 1 — Instruction Tuning & Grounding](lab-01-instruction-tuning-grounding.md)**
