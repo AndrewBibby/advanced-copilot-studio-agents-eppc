@@ -8,7 +8,7 @@ A full day, structured into five modules that follow the lifecycle of an agent �
 | 01 | Designing reliable agents | Lab 1 | 60 min | 3 × 20 min |
 | 02 | Extending agents — tools & data | Lab 2 | 75 min | 4 × ≤20 min |
 | 03 | Governing & securing agents | Lab 3 | 60 min | 3 × 20 min |
-| 04 | Human-in-the-loop & orchestration | Lab 4 | 45 min | 3 × ≤20 min |
+| 04 | Workflow checkpoint & orchestration | Lab 4 | 45 min | 3 × ≤20 min |
 | 05 | Test, monitor, evaluate & improve | Lab 5 | 60 min | 3 × 20 min |
 | ✦ | Old UI → New UI (cross-cutting / optional) | Lab 6 | 60 min | 3 × ≤20 min |
 
@@ -83,7 +83,7 @@ Other changes worth knowing on day one:
 
 ---
 
-## Module 4 — Human-in-the-loop & orchestration (45 min)
+## Module 4 — Workflow checkpoint & orchestration (45 min)
 
 *Approvals, RFI and AI-driven workflows.*
 
@@ -94,7 +94,7 @@ Other changes worth knowing on day one:
 - **AI Approvals** — auto-approve low-risk requests, escalate exceptions, keep a human override with captured explanations for audit.
 - **Express Mode** for agent-triggered workflows that must finish within the 2-minute limit.
 
-➡ **[Lab 4 — Human-in-the-loop checkpoint](../labs/lab-04-human-in-the-loop.md)**
+➡ **[Lab 4 — Workflow checkpoint](../labs/lab-04-workflow-checkpoint.md)**
 
 ---
 
@@ -117,6 +117,6 @@ Other changes worth knowing on day one:
 
 *The same tasks in the new agent experience.*
 
-The 2026 new experience replaces topics/triggers/node logic with a single instructions-driven agent on one surface (**Build · Preview · Evaluate · Monitor**). This optional lab re-creates **Lab 1** (prompt refinement, using **Instructions + a Skill** instead of topics) and **Lab 4** (human-in-the-loop, using the new **Workflows** designer + **agent node**), so attendees can map what they already know in Classic onto the new UI — and decide which experience to use for which job. Remember: **no migration path** between Classic and New.
+The 2026 new experience replaces topics/triggers/node logic with a single instructions-driven agent on one surface (**Build · Preview · Evaluate · Monitor**). This optional lab re-creates **Lab 1** (prompt refinement, using **Instructions + a Skill** instead of topics) and **Lab 4** (workflow checkpoint, using the new **Workflows** designer + **agent node**), so attendees can map what they already know in Classic onto the new UI — and decide which experience to use for which job. Remember: **no migration path** between Classic and New.
 
 ➡ **[Lab 6 — Old UI → New UI](../labs/lab-06-old-vs-new-ui.md)**

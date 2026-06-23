@@ -43,7 +43,7 @@ Every lab is split into **short exercises of no more than 20 minutes each**, so 
 | 01 | [Designing reliable agents](docs/agenda.md#module-1) | [Lab 1](labs/lab-01-refine-prompts.md) | 60 min | 3 × 20 min |
 | 02 | [Extending agents — tools & data](docs/agenda.md#module-2) | [Lab 2](labs/lab-02-dataverse-mcp-tools.md) | 75 min | 4 × ≤20 min |
 | 03 | [Governing & securing agents](docs/agenda.md#module-3) | [Lab 3](labs/lab-03-secure-agent-tools.md) | 60 min | 3 × 20 min |
-| 04 | [Human-in-the-loop & orchestration](docs/agenda.md#module-4) | [Lab 4](labs/lab-04-human-in-the-loop.md) | 45 min | 3 × ≤20 min |
+| 04 | [Workflow checkpoint & orchestration](docs/agenda.md#module-4) | [Lab 4](labs/lab-04-workflow-checkpoint.md) | 45 min | 3 × ≤20 min |
 | 05 | [Test, monitor, evaluate & improve](docs/agenda.md#module-5) | [Lab 5](labs/lab-05-monitor-evaluate-iterate.md) | 60 min | 3 × 20 min |
 | ✦ | Old UI → New UI (cross-cutting) | [Lab 6](labs/lab-06-old-vs-new-ui.md) | 60 min | 3 × ≤20 min |
 
@@ -65,7 +65,7 @@ advanced-copilot-studio-training/
 │   ├── lab-01-refine-prompts.md
 │   ├── lab-02-dataverse-mcp-tools.md
 │   ├── lab-03-secure-agent-tools.md
-│   ├── lab-04-human-in-the-loop.md
+│   ├── lab-04-workflow-checkpoint.md
 │   ├── lab-05-monitor-evaluate-iterate.md
 │   └── lab-06-old-vs-new-ui.md         ← redo Lab 1 & Lab 4 in the new UI
 └── artifacts/                 ← copy-ready templates & checklists

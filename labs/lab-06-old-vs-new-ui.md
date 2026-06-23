@@ -7,7 +7,7 @@
 Re-create two earlier labs in the **new Copilot Studio agent experience** and see exactly where it differs from the Classic UI:
 
 - **Lab 1** (refine prompts at agent & topic level) → done with **Instructions + a Skill** instead of topics.
-- **Lab 4** (human-in-the-loop) → done with the **new Workflows designer + agent node** instead of Classic agent flows/triggers.
+- **Lab 4** (workflow checkpoint) → done with the **new Workflows designer + agent node** instead of Classic agent flows/triggers.
 
 You'll leave able to decide *which experience to use for which job*.
 
@@ -90,4 +90,4 @@ New agent experience (Build / Preview / Evaluate / Monitor) · Instructions + re
 - **Choose Classic** when you need deterministic, auditable step-by-step control (compliance-critical, regulated, heavily branched flows), or a feature only Classic currently exposes.
 - **Remember:** no migration path, and Classic agents don't appear as connected agents in New (or vice-versa). Decide the experience *before* you invest in building.
 
-➡ Related: **[Lab 1](lab-01-refine-prompts.md)** · **[Lab 4](lab-04-human-in-the-loop.md)** · **[agenda & UI orientation](../docs/agenda.md)**
+➡ Related: **[Lab 1](lab-01-refine-prompts.md)** · **[Lab 4](lab-04-workflow-checkpoint.md)** · **[agenda & UI orientation](../docs/agenda.md)**

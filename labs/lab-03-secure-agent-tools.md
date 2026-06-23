@@ -66,4 +66,4 @@ Microsoft Entra ID · SSO · on-behalf-of (OBO) · DLP policies · endpoint filt
 - Estimate the agent's **Copilot Credits** with the usage estimator and identify the biggest cost lever.
 - Enable a **Managed Environment** sharing control and observe what it prevents.
 
-➡ Next: **[Lab 4 — Human-in-the-loop checkpoint](lab-04-human-in-the-loop.md)**
+➡ Next: **[Lab 4 — Workflow checkpoint](lab-04-workflow-checkpoint.md)**

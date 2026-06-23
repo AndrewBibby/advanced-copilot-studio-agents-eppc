@@ -1,10 +1,10 @@
-# Lab 4 — Human-in-the-Loop Checkpoint
+# Lab 4 — Workflow Checkpoint
 
-**Module 4 · Human-in-the-loop & orchestration · ~45 min · 3 exercises (≤20 min each)**
+**Module 4 · Workflow checkpoint & orchestration · ~45 min · 3 exercises (≤20 min each)**
 
 ## Objective
 
-Insert a **human decision point** so the agent pauses before a critical action, using a **Request for Information (RFI)** action and an **AI Approval** stage with a human override.
+Insert a **workflow decision point** so the agent pauses before a critical action, using a **Request for Information (RFI)** action and an **AI Approval** stage with a human override.
 
 ## Prerequisites
 
@@ -13,7 +13,7 @@ Insert a **human decision point** so the agent pauses before a critical action, 
 
 ## Background (why this matters)
 
-Automation should stop and ask a human wherever judgment must gate the process — claims triage, finance verification, quality sign-off, legal review. **RFI** pauses a workflow, emails a named reviewer, collects structured input, then resumes. **AI Approvals** auto-approve low-risk requests and escalate the rest, while a human keeps final authority with the reason captured for audit. Build HITL checkpoints around any create/update/delete the agent can perform (recall the Dataverse write tools from Lab 2).
+Automation should stop and ask for review wherever judgment must gate the process — claims triage, finance verification, quality sign-off, legal review. **RFI** pauses a workflow, emails a named reviewer, collects structured input, then resumes. **AI Approvals** auto-approve low-risk requests and escalate the rest, while a human keeps final authority with the reason captured for audit. Build checkpoints around any create/update/delete the agent can perform (recall the Dataverse write tools from Lab 2).
 
 ---
 
