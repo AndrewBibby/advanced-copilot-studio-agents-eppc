@@ -1,6 +1,6 @@
 # Lab 5 — Monitor in Copilot Studio + Agent 365, then Iterate
 
-**Module 5 · Test, monitor, evaluate & improve · ~60 min**
+**Module 5 · Test, monitor, evaluate & improve · ~60 min · 3 exercises (≤20 min each)**
 
 ## Objective
 
@@ -13,15 +13,41 @@ Watch your agent the way you would in production, then run a **structured improv
 
 ## Background (why this matters)
 
-Quality isn't a one-time tuning step — it's a loop. **Copilot Studio analytics** shows per-agent engagement, resolution and generated-answer rate plus transcripts; **Agent 365** is the fleet control plane (unified observability across every agent). The **Copilot Studio Kit** turns ad-hoc checks into repeatable **test sets with rubrics**, which you can wire into a CI/CD **eval gate** so regressions never reach production. The closing loop: **Analyze → Adjust → Re-test → Ship & repeat.** See [`artifacts/grounding-moderation-checklist.md`](../artifacts/grounding-moderation-checklist.md) for what to tighten when you adjust.
+Quality isn't a one-time tuning step — it's a loop. **Copilot Studio analytics** shows per-agent engagement, resolution and generated-answer rate plus transcripts; **Agent 365** is the fleet control plane. The **Copilot Studio Kit** turns ad-hoc checks into repeatable **test sets with rubrics**, which you can wire into a CI/CD **eval gate** so regressions never reach production. The closing loop: **Analyze → Adjust → Re-test → Ship & repeat.**
 
-## Tasks
+---
 
-1. **Review analytics.** In your agent's **Analytics**, look at engagement, resolution rate and generated-answer rate. Open **transcripts** and find low-confidence or unanswered questions.
-2. **Check the fleet view.** Open the agent in the **Agent 365** workspace and note what observability/governance it adds beyond the single-agent view (telemetry, policies, activity).
-3. **Build a test set.** In the **Copilot Studio Kit**, configure your agent and a test set seeded from your Lab 1 questions. Add tests of different types (response match, topic match, generative answers).
-4. **Add a rubric.** Score generative answers against a **user-defined rubric** (e.g. "cites a source", "stays in scope", "no fabrication") rather than exact-match only.
-5. **Run, then iterate.** Run the batch; read the aggregates and latencies. Pick the worst-performing area and **adjust** (instructions, knowledge scope, or a tool description). **Re-test** and compare versions side by side.
+### Exercise 5.1 — Review analytics, transcripts & the fleet view (20 min)
+
+*Goal: find a concrete gap from real signals.*
+
+1. In your agent's **Analytics**, review engagement, resolution rate and generated-answer rate.
+2. Open **transcripts** and find low-confidence or unanswered questions; note one gap to fix.
+3. Open the agent in the **Agent 365** workspace and note what observability/governance it adds beyond the single-agent view (telemetry, policies, activity).
+
+✅ **Checkpoint:** you've identified at least one concrete gap to improve.
+
+### Exercise 5.2 — Build a test set with a rubric (20 min)
+
+*Goal: make quality measurable and repeatable.*
+
+1. In the **Copilot Studio Kit**, configure your agent and a test set seeded from your Lab 1 questions.
+2. Add tests of different types (response match, topic match, generative answers).
+3. Add a **rubric** to score generative answers (e.g. "cites a source", "stays in scope", "no fabrication") rather than exact-match only.
+
+✅ **Checkpoint:** a rubric-scored test set runs and produces aggregate scores.
+
+### Exercise 5.3 — Run, adjust & re-test (20 min)
+
+*Goal: close the loop with a measurable improvement.*
+
+1. Run the batch; read the aggregates and latencies.
+2. Pick the worst-performing area and **adjust** one thing (instructions, knowledge scope, or a tool description).
+3. **Re-test** and compare versions side by side.
+
+✅ **Checkpoint:** one targeted change shows a measurable improvement on re-test.
+
+---
 
 ## Key concepts
 

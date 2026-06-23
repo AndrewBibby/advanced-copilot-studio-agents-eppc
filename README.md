@@ -35,16 +35,21 @@ The workshop is structured into clear modules, each supported by hands-on labs a
 
 ## Agenda
 
-| # | Module | Lab | Duration |
-|---|--------|-----|----------|
-| — | New Copilot Studio UI — changes & new features | — | 15 min |
-| 01 | [Designing reliable agents](docs/agenda.md#module-1) | [Lab 1](labs/lab-01-refine-prompts.md) | 60 min |
-| 02 | [Extending agents — tools & data](docs/agenda.md#module-2) | [Lab 2](labs/lab-02-dataverse-mcp-tools.md) | 75 min |
-| 03 | [Governing & securing agents](docs/agenda.md#module-3) | [Lab 3](labs/lab-03-secure-agent-tools.md) | 60 min |
-| 04 | [Human-in-the-loop & orchestration](docs/agenda.md#module-4) | [Lab 4](labs/lab-04-human-in-the-loop.md) | 45 min |
-| 05 | [Test, monitor, evaluate & improve](docs/agenda.md#module-5) | [Lab 5](labs/lab-05-monitor-evaluate-iterate.md) | 60 min |
+Every lab is split into **short exercises of no more than 20 minutes each**, so you always have a clean stopping point.
 
-> **Before you arrive:** complete **[Lab 0 — Environment Setup](labs/lab-00-environment-setup.md)** to provision a free Power Apps Developer Plan environment (with Dataverse) and a Copilot Studio trial. This takes ~20–30 minutes and removes the biggest source of delay on the day.
+| # | Module | Lab | Duration | Exercises |
+|---|--------|-----|----------|-----------|
+| — | New Copilot Studio UI — changes & new features | — | 15 min | — |
+| 01 | [Designing reliable agents](docs/agenda.md#module-1) | [Lab 1](labs/lab-01-refine-prompts.md) | 60 min | 3 × 20 min |
+| 02 | [Extending agents — tools & data](docs/agenda.md#module-2) | [Lab 2](labs/lab-02-dataverse-mcp-tools.md) | 75 min | 4 × ≤20 min |
+| 03 | [Governing & securing agents](docs/agenda.md#module-3) | [Lab 3](labs/lab-03-secure-agent-tools.md) | 60 min | 3 × 20 min |
+| 04 | [Human-in-the-loop & orchestration](docs/agenda.md#module-4) | [Lab 4](labs/lab-04-human-in-the-loop.md) | 45 min | 3 × ≤20 min |
+| 05 | [Test, monitor, evaluate & improve](docs/agenda.md#module-5) | [Lab 5](labs/lab-05-monitor-evaluate-iterate.md) | 60 min | 3 × 20 min |
+| ✦ | Old UI → New UI (cross-cutting) | [Lab 6](labs/lab-06-old-vs-new-ui.md) | 60 min | 3 × ≤20 min |
+
+> **Before you arrive:** complete **[Lab 0 — Environment Setup](labs/lab-00-environment-setup.md)** to provision a free Power Apps Developer Plan environment (with Dataverse) and a Copilot Studio trial. This takes ~20–30 minutes (short exercises, none over 20 min) and removes the biggest source of delay on the day.
+
+> **Optional / time-permitting:** **[Lab 6 — Old UI → New UI](labs/lab-06-old-vs-new-ui.md)** re-creates Lab 1 and Lab 4 in the new agent experience so attendees see exactly how the new Build surface, Skills and Workflows map to the Classic topics/flows they already know.
 
 ---
 
@@ -61,7 +66,8 @@ advanced-copilot-studio-training/
 │   ├── lab-02-dataverse-mcp-tools.md
 │   ├── lab-03-secure-agent-tools.md
 │   ├── lab-04-human-in-the-loop.md
-│   └── lab-05-monitor-evaluate-iterate.md
+│   ├── lab-05-monitor-evaluate-iterate.md
+│   └── lab-06-old-vs-new-ui.md         ← redo Lab 1 & Lab 4 in the new UI
 └── artifacts/                 ← copy-ready templates & checklists
     ├── agent-instructions-template.md
     ├── prompt-tool-templates.md

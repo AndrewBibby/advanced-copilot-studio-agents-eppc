@@ -1,6 +1,6 @@
 # Lab 2 — Extend with Dataverse MCP & Tools
 
-**Module 2 · Extending agents — tools & data · ~75 min**
+**Module 2 · Extending agents — tools & data · ~75 min · 4 exercises (≤20 min each)**
 
 ## Objective
 
@@ -14,18 +14,51 @@ Give your agent real business data by wiring **Dataverse through the MCP server*
 
 ## Background (why this matters)
 
-MCP is a universal adapter that makes capabilities discoverable to the agent at runtime — "MCP connects capabilities; connectors connect systems." The golden rule: **treat an MCP server like an API with administrative access, not like a document.** Every tool can act on behalf of the user, so governance must be intentional. The Dataverse MCP server exposes named tools with a clear contract; you'll expose only the ones you need.
+MCP is a universal adapter that makes capabilities discoverable to the agent at runtime — "MCP connects capabilities; connectors connect systems." The golden rule: **treat an MCP server like an API with administrative access, not like a document.** Every tool can act on behalf of the user, so governance must be intentional. There are **five ways to retrieve Dataverse data** — Knowledge, MCP server, List Rows connector, Search Query, Prompt Tool; this lab uses the MCP path. See [`artifacts/tool-descriptions-examples.md`](../artifacts/tool-descriptions-examples.md).
 
-There are **five ways to retrieve Dataverse data** — Knowledge, MCP server, List Rows connector, Search Query, Prompt Tool. This lab uses the MCP path; the others are summarised in [`docs/agenda.md`](../docs/agenda.md#module-2--extending-agents--tools--data).
+---
 
-## Tasks
+### Exercise 2.1 — Add the Dataverse MCP server (20 min)
 
-1. **Add the Dataverse MCP server.** In your agent → **Tools** → **Add tool** → **New tool** → **MCP**. Provide a clear name, description and the server URL; set authentication appropriately. A good description helps the orchestrator decide when to call it.
-2. **Discover the schema.** Use `search` and `describe` to find tables and inspect their columns *before* querying. Add an instruction telling the agent to **search/describe first** and to **never answer data questions from memory**.
-3. **Query data.** Run a natural-language question that maps to `read_query` (Dataverse SQL `SELECT`) or `search_data`. Confirm the agent returns rows from your table.
-4. **Scope the tools (least privilege).** Use the **allowed tools** setting to expose only `search`, `describe`, `read_query`/`search_data`. **Turn off** `create_record`, `update_record`, `delete_record`, and the schema-changing tools unless a task needs them.
-5. **Prove writes are gated.** If you do enable a write, confirm that `delete_record`/`delete_table` require **explicit user approval**, and that **RBAC** stops the agent seeing data the signed-in user can't see.
-6. **Test natural-language queries** end-to-end in the Test panel — e.g. "How many active accounts are in London?" — and confirm the agent uses the tool rather than guessing.
+*Goal: connect the MCP server and confirm its tools populate.*
+
+1. In your agent → **Tools** → **Add tool** → **New tool** → **MCP**.
+2. Provide a clear name, description and the server URL; set authentication appropriately. A good description helps the orchestrator decide when to call it.
+3. Create the connection and **Add**. Confirm the server's tools auto-populate as actions.
+
+✅ **Checkpoint:** the Dataverse MCP tools (`search`, `describe`, `read_query`, etc.) appear in the agent's tool list.
+
+### Exercise 2.2 — Discover schema & query data (20 min)
+
+*Goal: get the agent to discover tables before querying, and return real rows.*
+
+1. Add an instruction telling the agent to **`search`/`describe` first** and to **never answer data questions from memory**.
+2. In the Test panel, prompt a question that maps to `read_query` (Dataverse SQL `SELECT`) or `search_data`.
+3. Confirm the agent inspects the schema, then returns rows from your table.
+
+✅ **Checkpoint:** the test trace shows `search`/`describe` then a query — not a guessed answer.
+
+### Exercise 2.3 — Scope tools to least privilege (20 min)
+
+*Goal: expose only what the agent needs.*
+
+1. Use the **allowed tools** setting to expose only `search`, `describe`, `read_query`/`search_data`.
+2. **Turn off** `create_record`, `update_record`, `delete_record`, and the schema-changing tools.
+3. Re-test a read question to confirm it still works with the reduced toolset.
+
+✅ **Checkpoint:** only read tools are enabled; write/delete/schema tools are off.
+
+### Exercise 2.4 — Prove writes are gated & test end-to-end (15 min)
+
+*Goal: confirm safety rails and run a realistic query.*
+
+1. (Optional) Temporarily enable one write and confirm `delete_record`/`delete_table` require **explicit user approval**, and that **RBAC** stops the agent seeing data the signed-in user can't.
+2. Run a natural-language question end-to-end — e.g. "How many active accounts are in London?" — and confirm the agent uses the tool rather than guessing.
+3. Turn writes back off.
+
+✅ **Checkpoint:** you can state which retrieval pattern (of the five) you'd choose for a different question and why.
+
+---
 
 ## Key concepts
 
@@ -35,7 +68,7 @@ Dataverse MCP · tool scoping (allowed-clients & allowed-tools) · least-privile
 
 - [ ] The agent answers a data question by **calling the MCP tool** (visible in the test trace), not from memory.
 - [ ] Only **read** tools are exposed; write/delete/schema tools are off.
-- [ ] You can articulate which retrieval pattern (of the five) you'd choose for a different question and why.
+- [ ] You can articulate which retrieval pattern you'd choose for a different question and why.
 
 ## Stretch goals
 

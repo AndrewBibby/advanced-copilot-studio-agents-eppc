@@ -1,15 +1,16 @@
 # Agenda & module overview
 
-A full day, structured into five modules that follow the lifecycle of an agent — **design → extend → govern → keep humans in the loop → operate & improve**. Each module is paired with a hands-on lab.
+A full day, structured into five modules that follow the lifecycle of an agent — **design → extend → govern → keep humans in the loop → operate & improve**. Each module is paired with a hands-on lab, and **every lab is split into exercises of no more than 20 minutes** so there's always a clean stopping point.
 
-| # | Module | Lab | Duration |
-|---|--------|-----|----------|
-| — | New Copilot Studio UI — changes & new features | — | 15 min |
-| 01 | Designing reliable agents | Lab 1 | 60 min |
-| 02 | Extending agents — tools & data | Lab 2 | 75 min |
-| 03 | Governing & securing agents | Lab 3 | 60 min |
-| 04 | Human-in-the-loop & orchestration | Lab 4 | 45 min |
-| 05 | Test, monitor, evaluate & improve | Lab 5 | 60 min |
+| # | Module | Lab | Duration | Exercises |
+|---|--------|-----|----------|-----------|
+| — | New Copilot Studio UI — changes & new features | — | 15 min | — |
+| 01 | Designing reliable agents | Lab 1 | 60 min | 3 × 20 min |
+| 02 | Extending agents — tools & data | Lab 2 | 75 min | 4 × ≤20 min |
+| 03 | Governing & securing agents | Lab 3 | 60 min | 3 × 20 min |
+| 04 | Human-in-the-loop & orchestration | Lab 4 | 45 min | 3 × ≤20 min |
+| 05 | Test, monitor, evaluate & improve | Lab 5 | 60 min | 3 × 20 min |
+| ✦ | Old UI → New UI (cross-cutting / optional) | Lab 6 | 60 min | 3 × ≤20 min |
 
 ---
 
@@ -109,3 +110,13 @@ Other changes worth knowing on day one:
 - **The agentic improvement loop** — Analyze → Adjust → Re-test → Ship & repeat.
 
 ➡ **[Lab 5 — Monitor in Copilot Studio + Agent 365, then iterate](../labs/lab-05-monitor-evaluate-iterate.md)**
+
+---
+
+## ✦ Cross-cutting (optional) — Old UI → New UI
+
+*The same tasks in the new agent experience.*
+
+The 2026 new experience replaces topics/triggers/node logic with a single instructions-driven agent on one surface (**Build · Preview · Evaluate · Monitor**). This optional lab re-creates **Lab 1** (prompt refinement, using **Instructions + a Skill** instead of topics) and **Lab 4** (human-in-the-loop, using the new **Workflows** designer + **agent node**), so attendees can map what they already know in Classic onto the new UI — and decide which experience to use for which job. Remember: **no migration path** between Classic and New.
+
+➡ **[Lab 6 — Old UI → New UI](../labs/lab-06-old-vs-new-ui.md)**

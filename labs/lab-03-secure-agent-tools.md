@@ -1,6 +1,6 @@
 # Lab 3 — Secure Agent Tools & Connections
 
-**Module 3 · Governing & securing agents · ~60 min**
+**Module 3 · Governing & securing agents · ~60 min · 3 exercises (≤20 min each)**
 
 ## Objective
 
@@ -13,17 +13,41 @@ Lock down **how your agent authenticates** and **which tools it can reach**, so 
 
 ## Background (why this matters)
 
-"No authentication" is the fastest demo and the worst production choice. The authentication ladder runs **No auth → Entra ID → SSO → On-behalf-of (OBO) → web channel security**, and OBO is the key pattern for secure tool access — the agent calls downstream connectors *as the signed-in user*, so existing M365 permissions and RBAC apply automatically. **DLP** then governs which connectors and endpoints the agent can touch at all. See [`artifacts/dlp-environment-strategy-checklist.md`](../artifacts/dlp-environment-strategy-checklist.md).
+"No authentication" is the fastest demo and the worst production choice. The authentication ladder runs **No auth → Entra ID → SSO → On-behalf-of (OBO) → web channel security**, and OBO is the key pattern — the agent calls downstream connectors *as the signed-in user*, so existing M365 permissions and RBAC apply automatically. **DLP** then governs which connectors and endpoints the agent can touch at all. See [`artifacts/dlp-environment-strategy-checklist.md`](../artifacts/dlp-environment-strategy-checklist.md).
 
-## Tasks
+---
 
-1. **Require authentication.** In the agent's **Settings → Security**, disable unauthenticated access and require **Microsoft Entra ID** authentication.
-2. **Configure On-behalf-of.** For a connector your agent uses, configure **OBO** so calls run as the signed-in user. Verify a low-privilege test user sees fewer rows than an admin for the same question.
-3. **Apply DLP.** In **PPAC → Policies → Data policies**, confirm/define a policy for the environment that:
-   - Blocks connectors the agent doesn't need,
-   - Uses **endpoint filtering** to restrict a connector (e.g. SharePoint) to approved sites/URLs only.
-4. **Restrict channels & knowledge.** Limit publishing channels and restrict knowledge sources to approved endpoints (block public web / Bing where not needed).
-5. **Verify entitlement.** Sign in as the low-privilege user and confirm the agent **cannot** surface data that user has no rights to. Capture the before/after.
+### Exercise 3.1 — Require auth & configure On-behalf-of (20 min)
+
+*Goal: force Entra sign-in and make tool calls run as the user.*
+
+1. In the agent's **Settings → Security**, disable unauthenticated access and require **Microsoft Entra ID** authentication.
+2. For a connector your agent uses, configure **On-behalf-of (OBO)** so calls run as the signed-in user.
+3. Note a test question you'll re-run as a low-privilege user in Exercise 3.3.
+
+✅ **Checkpoint:** the agent requires Entra sign-in; a connector is set to OBO.
+
+### Exercise 3.2 — Apply DLP & endpoint filtering (20 min)
+
+*Goal: restrict which connectors/endpoints the agent can reach.*
+
+1. In **PPAC → Policies → Data policies**, confirm/define a policy for the environment that **blocks connectors the agent doesn't need**.
+2. Apply **endpoint filtering** to restrict a connector (e.g. SharePoint) to approved sites/URLs only.
+3. Block public web / Bing knowledge where it isn't needed.
+
+✅ **Checkpoint:** a DLP policy with endpoint filtering is applied to the environment.
+
+### Exercise 3.3 — Restrict channels & verify entitlement (20 min)
+
+*Goal: prove the agent honours user permissions.*
+
+1. Limit publishing channels and restrict knowledge sources to approved endpoints.
+2. Sign in as a **low-privilege test user** and re-run the question from Exercise 3.1.
+3. Confirm the agent **cannot** surface data that user has no rights to. Capture before/after.
+
+✅ **Checkpoint:** a low-privilege user is demonstrably blocked from data they shouldn't see.
+
+---
 
 ## Key concepts
 

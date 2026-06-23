@@ -1,6 +1,6 @@
 # Lab 4 — Human-in-the-Loop Checkpoint
 
-**Module 4 · Human-in-the-loop & orchestration · ~45 min**
+**Module 4 · Human-in-the-loop & orchestration · ~45 min · 3 exercises (≤20 min each)**
 
 ## Objective
 
@@ -15,16 +15,41 @@ Insert a **human decision point** so the agent pauses before a critical action, 
 
 Automation should stop and ask a human wherever judgment must gate the process — claims triage, finance verification, quality sign-off, legal review. **RFI** pauses a workflow, emails a named reviewer, collects structured input, then resumes. **AI Approvals** auto-approve low-risk requests and escalate the rest, while a human keeps final authority with the reason captured for audit. Build HITL checkpoints around any create/update/delete the agent can perform (recall the Dataverse write tools from Lab 2).
 
-## Tasks
+---
 
-1. **Create or open a Workflow** that the agent can call (use the redesigned Workflows canvas; node-level testing lets you test one step without running the whole flow).
-2. **Add a Request for Information action.** Configure:
+### Exercise 4.1 — Build a workflow with a Request for Information (20 min)
+
+*Goal: pause automation and ask a named human.*
+
+1. Open **Flows** → create a **New workflow** (the redesigned canvas with node-level testing) the agent can call.
+2. Add a **Request for Information** action. Configure:
    - the named reviewer(s),
    - structured input types (text / number / email / yes-no / date; single- or multi-select; required),
    - what happens on response. Requests go via Outlook and the **first responder wins**.
-3. **Branch on the response.** If approved → continue to the action (e.g. the Dataverse `create_record`/`update_record`); if rejected → stop and message the user.
-4. **Add an AI Approval stage.** Give it decision criteria and inputs (a document/knowledge), let it decide *with an explanation*, auto-approve low-risk and escalate exceptions to a person.
-5. **Test end-to-end.** Trigger the flow from the agent, respond to the RFI email, and confirm the branch and the captured approval explanation.
+3. Test just that node to confirm the email is sent.
+
+✅ **Checkpoint:** the workflow pauses and sends an RFI email to a human.
+
+### Exercise 4.2 — Branch on the human response (15 min)
+
+*Goal: route the flow on approve vs reject.*
+
+1. Add a condition on the RFI response.
+2. **Approved →** continue to the gated action (e.g. the Dataverse `create_record`/`update_record`).
+3. **Rejected →** stop and message the user.
+
+✅ **Checkpoint:** the gated write only happens on the approved branch.
+
+### Exercise 4.3 — Add an AI Approval stage & test end-to-end (15 min)
+
+*Goal: auto-handle the routine, escalate the exceptions, keep a human override.*
+
+1. Add an **AI Approval** stage: give it decision criteria and inputs (a document/knowledge), let it decide *with an explanation*, auto-approve low-risk and escalate exceptions to a person.
+2. Trigger the flow from the agent, respond to the RFI email, and confirm the branch and the captured approval explanation.
+
+✅ **Checkpoint:** the AI Approval records a reason/explanation for audit, and a human can override.
+
+---
 
 ## Key concepts
 
@@ -43,4 +68,4 @@ Request for Information (RFI) · structured inputs · AI Approvals · multi-stag
 - Add an "ask vs. inform" follow-up and note the difference (ask = two-way and waits; inform = one-way).
 - Wire the approval outcome back into the agent's reply so the user sees the decision and reason.
 
-➡ Next: **[Lab 5 — Monitor in Copilot Studio + Agent 365, then iterate](lab-05-monitor-evaluate-iterate.md)**
+➡ Next: **[Lab 5 — Monitor in Copilot Studio + Agent 365, then iterate](lab-05-monitor-evaluate-iterate.md)** · See also **[Lab 6 — the same HITL task in the new UI](lab-06-old-vs-new-ui.md)**

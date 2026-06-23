@@ -1,6 +1,6 @@
 # Lab 0 — Environment Setup
 
-> **Do this before the workshop.** It takes ~20–30 minutes and removes the single biggest source of delay on the day. If you hit a blocker, note where you got stuck and bring it — we'll triage at the start of the session.
+> **Do this before the workshop.** It takes ~20–30 minutes total, split into short exercises (none longer than 20 min), and removes the single biggest source of delay on the day. If you hit a blocker, note where you got stuck and bring it — we'll triage at the start of the session.
 
 ## Objective
 
@@ -30,7 +30,7 @@ By the end you'll be able to open Copilot Studio, create a new agent, and see yo
 
 ---
 
-## Part A — Power Apps Developer Plan + Dataverse (≈ 10 min)
+## Exercise A — Power Apps Developer Plan + Dataverse (≈ 10 min)
 
 The Developer Plan gives you a **free** environment with Power Apps, Power Automate and Dataverse, kept as long as you actively use it (it is *not* for production).
 
@@ -51,7 +51,7 @@ The Developer Plan gives you a **free** environment with Power Apps, Power Autom
 
 ---
 
-## Part B — Copilot Studio trial (≈ 5 min)
+## Exercise B — Copilot Studio trial (≈ 5 min)
 
 1. Go to the Copilot Studio sign-up: **https://aka.ms/TryCopilotStudio**
    (equivalently the licensing doc's sign-up link, or just <https://copilotstudio.microsoft.com> and sign in).
@@ -67,7 +67,7 @@ The Developer Plan gives you a **free** environment with Power Apps, Power Autom
 
 ---
 
-## Recommended (not required) — turn on a Managed Environment
+## Exercise C (recommended, not required) — turn on a Managed Environment (≈ 5 min)
 
 Several Module 3 governance features (sharing controls, pipelines, solution-checker enforcement) and the **Dataverse MCP server** in Lab 2 work best with **Managed Environments** and **generative orchestration** enabled. If you have admin rights on your dev tenant:
 
