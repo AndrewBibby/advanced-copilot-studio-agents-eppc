@@ -1,0 +1,27 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Power Platform / PAC CLI exports
+*.zip
+*.msapp
+*.cmt
+out/
+bin/
+obj/
+
+# Secrets — never commit credentials, tokens or connection details
+*.env
+.env*
+secrets.json
+appsettings.Local.json
+
+# Temp
+*.tmp
+~$*
