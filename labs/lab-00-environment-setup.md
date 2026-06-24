@@ -44,7 +44,7 @@ The Developer Plan gives each attendee a personal environment with Power Apps, P
 > If you are an experienced user using your own work account and existing environment, validate your setup and skip sign-up steps already completed.
 
 1. Go to **https://make.powerapps.com** and sign in.
-2. **Check whether you already have a developer environment.** In the top-right, open the **environment picker** and look for your developer environment.
+2. **Check whether you already have a developer environment.** In the top-right, open the **environment picker** and look for an environment labeled **"Developer"**, **"Default"**, or with a name like **"[Your Name]'s environment"**. If you see one, it's your developer environment.
 3. **Only if you do not already have a developer environment:**
    - Open the Developer Plan sign-up page: **https://aka.ms/PowerAppsDevPlan**
      (equivalently: <https://www.microsoft.com/power-platform/products/power-apps/free>).
