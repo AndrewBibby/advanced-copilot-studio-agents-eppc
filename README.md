@@ -49,6 +49,8 @@ Every lab is split into **short exercises of no more than 20 minutes each**, so 
 
 > **Before you arrive:** complete **[Lab 0 — Environment Setup](labs/lab-00-environment-setup.md)** to provision a free Power Apps Developer Plan environment (with Dataverse) and a Copilot Studio trial. This takes ~20–30 minutes and removes the biggest source of delay on the day.
 
+> **Publishing note:** only attendees using provided lab credentials can publish agents in the workshop lab environment (this is optional, not required). Attendees using their own tenant can still complete the labs, but publishing depends on their own tenant/licensing/policy setup and isn't supported by the workshop team.
+
 > **Optional / time-permitting:** **[Lab 6 — Old UI → New UI](labs/lab-06-old-vs-new-ui.md)** re-creates Lab 1 and Lab 4 in the new agent experience so attendees see exactly how the new Build surface, Skills and Workflows map to the Classic topics/flows they already know.
 
 ---
@@ -89,7 +91,10 @@ advanced-copilot-studio-training/
 
 ## Prerequisites at a glance
 
-- A **work or school account** (Microsoft Entra ID). Personal accounts (outlook.com, gmail.com, etc.) are rejected by the trial sign-up flows — see Lab 0 for the workaround via the Microsoft 365 Developer Program.
+- A **workshop-provided Microsoft Entra login** (default and supported path).
+- **Experienced-user exception:** you may use your own work login if you already have Power Apps, Copilot Studio, and a developer environment with Dataverse in your work tenant.
+- For the own-tenant path, **personal email accounts** (outlook.com, gmail.com, etc.) are not supported by the sign-up flows; see **Lab 0** for details and alternatives.
+- If you choose your own work login/environment, workshop support is limited for tenant-specific issues.
 - A modern browser (Chrome 91+, Edge, Firefox 89+, or Safari 16.4+).
 - Completion of **Lab 0** — a Power Apps Developer Plan environment with Dataverse, plus a Copilot Studio trial.
 
