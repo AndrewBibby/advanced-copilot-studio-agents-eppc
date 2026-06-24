@@ -115,7 +115,7 @@ The Developer Plan gives each attendee a personal environment with Power Apps, P
 Use this path only if you are intentionally working in your own work tenant rather than the workshop-provided login. This is an experienced-user path with limited workshop support for tenant-specific issues.
 
 1. Use a work or school account with access to Power Apps, Copilot Studio and Dataverse.
-2. Complete the Power Apps Developer Plan flow to create the personal developer environment for that tenant.
+2. Complete the Power Apps Developer Plan flow: visit <https://aka.ms/PowerAppsDevPlan>, select **Start free**, and follow the prompts to create your personal developer environment for that tenant.
 3. If sign-up is blocked by your organisation, contact your IT admin or use the workshop-provided login instead.
 4. Personal email accounts are not supported for this path.
 
