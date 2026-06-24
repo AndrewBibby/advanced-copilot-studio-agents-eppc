@@ -25,6 +25,7 @@ Use your workshop-provided login, then confirm:
   - Microsoft Power Apps for Developer
   - Microsoft Copilot Studio Viral Trial
 - **You may still need to complete the Power Apps Developer Plan flow** to create your own personal developer environment.
+- If you are using the own-tenant path, see the **Appendix – Own-tenant path (limited support)** below for sign-up notes.
 - **Experienced-user exception (use your own work account).** You may use your own work login only if you already have access to **Power Apps**, **Copilot Studio**, and a **developer environment with Dataverse** in your work tenant.
 - **Support boundary.** We can't provide lab support for issues caused by using your own work login/environment (tenant policies, licences, DLP, admin restrictions, or environment policies).
 - **Account type still matters.** Personal email addresses (outlook.com, hotmail.com, gmail.com, etc.) are not supported for the own-tenant sign-up path.
@@ -42,12 +43,15 @@ The Developer Plan gives each attendee a personal environment with Power Apps, P
 > Use your assigned workshop account (for example: `user001@eppcagents2026.onmicrosoft.com`).
 > If you are an experienced user using your own work account and existing environment, validate your setup and skip sign-up steps already completed.
 
-1. Open the Developer Plan sign-up page: **https://aka.ms/PowerAppsDevPlan**
-   (equivalently: <https://www.microsoft.com/power-platform/products/power-apps/free>).
-2. Select **Start free / Sign up**, enter your **work or school email**, and follow the prompts.
-3. After sign-up, go to **https://make.powerapps.com**.
-4. **Confirm the environment exists.** In the top-right of make.powerapps.com, open the **environment picker** and select your developer environment.
-   - Provisioning can take a few minutes after sign-up. Refresh make.powerapps.com and check the environment picker until it appears.
+1. Go to **https://make.powerapps.com** and sign in.
+2. **Check whether you already have a developer environment.** In the top-right, open the **environment picker** and look for your developer environment.
+3. **Only if you do not already have a developer environment:**
+   - Open the Developer Plan sign-up page: **https://aka.ms/PowerAppsDevPlan**
+     (equivalently: <https://www.microsoft.com/power-platform/products/power-apps/free>).
+   - Select **Start free / Sign up**, enter your **work or school email**, and follow the prompts.
+   - Return to **https://make.powerapps.com** and refresh until the environment appears.
+   - Provisioning can take a few minutes after sign-up.
+4. Select the developer environment in the environment picker.
 
 ### Verify Dataverse is present
 
@@ -105,5 +109,14 @@ The Developer Plan gives each attendee a personal environment with Power Apps, P
 - Sign up for Copilot Studio as an individual: <https://learn.microsoft.com/microsoft-copilot-studio/sign-up-individual>
 - Create a developer environment (Power Apps Developer Plan): <https://learn.microsoft.com/power-platform/developer/create-developer-environment>
 - Explore Power Apps free for 30 days: <https://learn.microsoft.com/power-apps/maker/signup-for-powerapps>
+
+## Appendix – Own-tenant path (limited support)
+
+Use this path only if you are intentionally working in your own work tenant rather than the workshop-provided login. This is an experienced-user path with limited workshop support for tenant-specific issues.
+
+1. Use a work or school account with access to Power Apps, Copilot Studio and Dataverse.
+2. Complete the Power Apps Developer Plan flow to create the personal developer environment for that tenant.
+3. If sign-up is blocked by your organisation, contact your IT admin or use the workshop-provided login instead.
+4. Personal email accounts are not supported for this path.
 
 ➡ Next: **[Lab 1 – Instruction Tuning & Grounding](lab-01-instruction-tuning-grounding.md)**
