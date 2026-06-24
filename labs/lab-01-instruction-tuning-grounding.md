@@ -1,4 +1,4 @@
-# Lab 1 — Instruction Tuning & Grounding
+# Lab 1 – Instruction Tuning & Grounding
 
 **Module 1 · Instruction tuning & grounding · ~60 min · 3 exercises (≤20 min each)**
 
@@ -11,26 +11,26 @@ Improve accuracy and consistency by tuning instructions at the **agent level** a
 - Lab 0 complete (Copilot Studio trial + developer environment).
 - A simple agent grounded on **one** narrow knowledge source (a SharePoint site, a couple of uploaded PDFs, or an allow-listed website). Keep the scope deliberately small.
 
-## Background (why this matters)
+## Background
 
 Most hallucinations come from vague instructions and over-broad knowledge, not from the model. You'll apply the **Role / Objective / Tool-usage / Reasoning & grounding** instruction pattern and the **grounding & moderation dials** to make answers traceable and consistent. See [`artifacts/agent-instructions-template.md`](../artifacts/agent-instructions-template.md) and [`artifacts/grounding-moderation-checklist.md`](../artifacts/grounding-moderation-checklist.md).
 
 ---
 
-### Exercise 1.1 — Baseline & rewrite agent instructions (20 min)
+### Exercise 1.1 – Baseline & rewrite agent instructions (20 min)
 
 *Goal: capture a "before" and apply the four-block instruction pattern.*
 
-1. **Baseline.** Ask your agent 5 representative questions (include 1–2 it *shouldn't* be able to answer). Save the answers — this is your "before".
+1. **Baseline.** Ask your agent 5 representative questions (include 1–2 it *shouldn't* be able to answer). Save the answers – this is your "before".
 2. **Rewrite agent instructions** using the template's four blocks:
-   - **Role** — one clear identity and the single job it owns.
-   - **Objective & task flow** — the steps; check after each tool call whether the objective is met.
-   - **Tool-usage rules** — when to call which tool; "read each tool description and follow it exactly".
-   - **Reasoning & grounding rules** — reason step by step; *never answer from general knowledge — always retrieve*; on error, surface and retry.
+   - **Role** – one clear identity and the single job it owns.
+   - **Objective & task flow** – the steps; check after each tool call whether the objective is met.
+   - **Tool-usage rules** – when to call which tool; "read each tool description and follow it exactly".
+   - **Reasoning & grounding rules** – reason step by step; *never answer from general knowledge – always retrieve*; on error, surface and retry.
 
 ✅ **Checkpoint:** instructions now have four clearly labelled blocks and a one-line identity.
 
-### Exercise 1.2 — Set the grounding & moderation dials (20 min)
+### Exercise 1.2 – Set the grounding & moderation dials (20 min)
 
 *Goal: make answers traceable and stop fallback to general model knowledge.*
 
@@ -41,7 +41,7 @@ Most hallucinations come from vague instructions and over-broad knowledge, not f
 
 ✅ **Checkpoint:** factual answers show a citation; an out-of-scope question no longer invents an answer.
 
-### Exercise 1.3 — Per-topic instructions & compare (20 min)
+### Exercise 1.3 – Per-topic instructions & compare (20 min)
 
 *Goal: tighten one conversation path and measure the overall improvement.*
 
@@ -69,4 +69,4 @@ Agent instructions · topic-level generative answers · moderation level · grou
 - Reduce response length in Generative AI settings and observe the effect on quality.
 - Capture your 5 questions as the seed of a **test set** you'll automate in Lab 5.
 
-➡ Next: **[Lab 2 — Dataverse MCP & Least-Privilege Data Access](lab-02-dataverse-mcp-least-privilege.md)** · See also **[Lab 6 — the same prompt-refinement task in the new UI](lab-06-old-vs-new-ui.md)**
+➡ Next: **[Lab 2 – Dataverse MCP & Least-Privilege Data Access](lab-02-dataverse-mcp-least-privilege.md)** · See also **[Lab 6 – the same prompt-refinement task in the new UI](lab-06-old-vs-new-ui.md)**

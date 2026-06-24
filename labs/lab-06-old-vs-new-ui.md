@@ -1,4 +1,4 @@
-# Lab 6 — Old UI → New UI: The Same Tasks in the New Agent Experience
+# Lab 6 – Old UI → New UI: The Same Tasks in the New Agent Experience
 
 **Cross-cutting · ~60 min · 3 exercises (≤20 min each)**
 
@@ -14,9 +14,9 @@ You'll leave able to decide *which experience to use for which job*.
 ## Prerequisites
 
 - Labs 1 and 4 complete in the Classic experience (so you have a "before" to compare against).
-- A tenant where the new experience is available. **Note:** there is **no migration path** between Classic and New — you'll build a *new* agent here, not convert your existing one.
+- A tenant where the new experience is available. **Note:** there is **no migration path** between Classic and New – you'll build a *new* agent here, not convert your existing one.
 
-## Background — what actually changed
+## Background – what actually changed
 
 The new experience replaces topics, triggers and node-based conversation logic with a **single agent object driven by instructions and reasoning**, all on one consolidated surface.
 
@@ -36,7 +36,7 @@ The new experience replaces topics, triggers and node-based conversation logic w
 
 ---
 
-### Exercise 6.1 — Create a new-experience agent & set up Build (15 min)
+### Exercise 6.1 – Create a new-experience agent & set up Build (15 min)
 
 *Goal: get oriented on the single-surface model.*
 
@@ -46,28 +46,28 @@ The new experience replaces topics, triggers and node-based conversation logic w
 
 ✅ **Checkpoint:** you can name where each Classic concept now lives on the Build tab.
 
-### Exercise 6.2 — Redo Lab 1 with Instructions + a Skill (20 min)
+### Exercise 6.2 – Redo Lab 1 with Instructions + a Skill (20 min)
 
 *Goal: achieve Lab 1's outcome without topics.*
 
 1. In **Instructions**, apply the same Role / Objective / Tool-usage / Reasoning & grounding pattern from [`artifacts/agent-instructions-template.md`](../artifacts/agent-instructions-template.md). In the new experience, instructions + reasoning replace topic routing.
-2. Where Lab 1 used a **per-topic custom instruction**, create a **Skill** instead — a reusable structured behaviour for that specific path (add it under **Tools and skills**; you can write it directly or import a `.md` skill).
+2. Where Lab 1 used a **per-topic custom instruction**, create a **Skill** instead – a reusable structured behaviour for that specific path (add it under **Tools and skills**; you can write it directly or import a `.md` skill).
 3. Apply the grounding intent ("use only specified knowledge", cite sources) through the instructions and knowledge scope, then **Preview** and ask your 5 Lab 1 questions.
 
-✅ **Checkpoint:** answers cite sources and refuse out-of-scope questions — same outcome as Lab 1, achieved with Instructions + a Skill rather than topics.
+✅ **Checkpoint:** answers cite sources and refuse out-of-scope questions – same outcome as Lab 1, achieved with Instructions + a Skill rather than topics.
 
 **Compare:** Classic = topic with Generative Answers custom instructions. New = agent Instructions + a Skill. Note which felt faster, and which gave you more precise control.
 
-### Exercise 6.3 — Redo Lab 4 with a Workflow + agent node (20 min)
+### Exercise 6.3 – Redo Lab 4 with a Workflow + agent node (20 min)
 
 *Goal: achieve Lab 4's HITL outcome in the new designer.*
 
 1. Go to **Flows** → **New workflow** (the redesigned designer with node-level testing). This is the new home for what Classic did with agent triggers/flows.
-2. Add a **Request for Information** action for the human checkpoint (same RFI behaviour as Lab 4 — Outlook, structured inputs, first-responder-wins), and branch on the response.
-3. Add an **Agent node**: either call a published agent or build an **inline agent for this workflow** (give it instructions, optionally tools/knowledge, and pick the output shape — text or structured). The agent node runs as the **triggering user**, so permissions and least-privilege are honoured automatically.
+2. Add a **Request for Information** action for the human checkpoint (same RFI behaviour as Lab 4 – Outlook, structured inputs, first-responder-wins), and branch on the response.
+3. Add an **Agent node**: either call a published agent or build an **inline agent for this workflow** (give it instructions, optionally tools/knowledge, and pick the output shape – text or structured). The agent node runs as the **triggering user**, so permissions and least-privilege are honoured automatically.
 4. **Preview/test** individual nodes, then run end-to-end.
 
-✅ **Checkpoint:** the workflow pauses for a human, then hands a step to an agent node — the Lab 4 outcome, built on the new Workflows surface.
+✅ **Checkpoint:** the workflow pauses for a human, then hands a step to an agent node – the Lab 4 outcome, built on the new Workflows surface.
 
 **Compare:** Classic = agent flow + topic-driven handoff. New = Workflow with RFI + agent node, node-level testing, and structured output tokens for downstream steps.
 
@@ -84,7 +84,7 @@ New agent experience (Build / Preview / Evaluate / Monitor) · Instructions + re
 - [ ] You reproduced **Lab 4's** HITL outcome with a **Workflow + RFI + agent node**.
 - [ ] You can state, for a given scenario, whether you'd choose Classic or New and why.
 
-## Decision guide — which experience for which job
+## Decision guide – which experience for which job
 
 - **Choose New** for fast, reasoning-driven agents over M365 data, multi-step orchestration, and where built-in Evaluate/Monitor helps the loop.
 - **Choose Classic** when you need deterministic, auditable step-by-step control (compliance-critical, regulated, heavily branched flows), or a feature only Classic currently exposes.

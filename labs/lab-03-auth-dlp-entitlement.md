@@ -1,4 +1,4 @@
-# Lab 3 — Authentication, DLP & Entitlement
+# Lab 3 – Authentication, DLP & Entitlement
 
 **Module 3 · Authentication, DLP & entitlement · ~60 min · 3 exercises (≤20 min each)**
 
@@ -11,13 +11,13 @@ Lock down **how your agent authenticates** and **which tools it can reach**, so 
 - Lab 2 complete (agent with a Dataverse tool).
 - Admin access to the **Power Platform admin center (PPAC)** for the dev environment, or use the shared lab tenant.
 
-## Background (why this matters)
+## Background
 
-"No authentication" is the fastest demo and the worst production choice. The authentication ladder runs **No auth → Entra ID → SSO → On-behalf-of (OBO) → web channel security**, and OBO is the key pattern — the agent calls downstream connectors *as the signed-in user*, so existing M365 permissions and RBAC apply automatically. **DLP** then governs which connectors and endpoints the agent can touch at all. See [`artifacts/dlp-environment-strategy-checklist.md`](../artifacts/dlp-environment-strategy-checklist.md).
+"No authentication" is the fastest demo and the worst production choice. The authentication ladder runs **No auth → Entra ID → SSO → On-behalf-of (OBO) → web channel security**, and OBO is the key pattern – the agent calls downstream connectors *as the signed-in user*, so existing M365 permissions and RBAC apply automatically. **DLP** then governs which connectors and endpoints the agent can touch at all. See [`artifacts/dlp-environment-strategy-checklist.md`](../artifacts/dlp-environment-strategy-checklist.md).
 
 ---
 
-### Exercise 3.1 — Require auth & configure On-behalf-of (20 min)
+### Exercise 3.1 – Require auth & configure On-behalf-of (20 min)
 
 *Goal: force Entra sign-in and make tool calls run as the user.*
 
@@ -27,7 +27,7 @@ Lock down **how your agent authenticates** and **which tools it can reach**, so 
 
 ✅ **Checkpoint:** the agent requires Entra sign-in; a connector is set to OBO.
 
-### Exercise 3.2 — Apply DLP & endpoint filtering (20 min)
+### Exercise 3.2 – Apply DLP & endpoint filtering (20 min)
 
 *Goal: restrict which connectors/endpoints the agent can reach.*
 
@@ -37,7 +37,7 @@ Lock down **how your agent authenticates** and **which tools it can reach**, so 
 
 ✅ **Checkpoint:** a DLP policy with endpoint filtering is applied to the environment.
 
-### Exercise 3.3 — Restrict channels & verify entitlement (20 min)
+### Exercise 3.3 – Restrict channels & verify entitlement (20 min)
 
 *Goal: prove the agent honours user permissions.*
 
@@ -62,8 +62,8 @@ Microsoft Entra ID · SSO · on-behalf-of (OBO) · DLP policies · endpoint filt
 
 ## Stretch goals
 
-- Map the **four-tier environment strategy** (Dev / Test / Internal Prod / External Prod) to your own org and note the DLP differences — especially the **Direct Line** conflict for external-facing agents.
+- Map the **four-tier environment strategy** (Dev / Test / Internal Prod / External Prod) to your own org and note the DLP differences – especially the **Direct Line** conflict for external-facing agents.
 - Estimate the agent's **Copilot Credits** with the usage estimator and identify the biggest cost lever.
 - Enable a **Managed Environment** sharing control and observe what it prevents.
 
-➡ Next: **[Lab 4 — Workflow Approval Gates](lab-04-workflow-approval-gates.md)**
+➡ Next: **[Lab 4 – Workflow Approval Gates](lab-04-workflow-approval-gates.md)**

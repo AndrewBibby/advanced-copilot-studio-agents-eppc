@@ -1,4 +1,4 @@
-# Lab 4 — Workflow Approval Gates
+# Lab 4 – Workflow Approval Gates
 
 **Module 4 · Workflow approval gates · ~45 min · 3 exercises (≤20 min each)**
 
@@ -11,13 +11,13 @@ Insert a **workflow decision point** so the agent pauses before a critical actio
 - Lab 2 complete (an agent with at least one tool/action worth gating).
 - Access to **Workflows** in Copilot Studio and an Outlook mailbox to receive the RFI request.
 
-## Background (why this matters)
+## Background
 
-Automation should stop and ask for review wherever judgment must gate the process — claims triage, finance verification, quality sign-off, legal review. **RFI** pauses a workflow, emails a named reviewer, collects structured input, then resumes. **AI Approvals** auto-approve low-risk requests and escalate the rest, while a human keeps final authority with the reason captured for audit. Build checkpoints around any create/update/delete the agent can perform (recall the Dataverse write tools from Lab 2).
+Automation should stop and ask for review wherever judgment must gate the process – claims triage, finance verification, quality sign-off, legal review. **RFI** pauses a workflow, emails a named reviewer, collects structured input, then resumes. **AI Approvals** auto-approve low-risk requests and escalate the rest, while a human keeps final authority with the reason captured for audit. Build checkpoints around any create/update/delete the agent can perform (recall the Dataverse write tools from Lab 2).
 
 ---
 
-### Exercise 4.1 — Build a workflow with a Request for Information (20 min)
+### Exercise 4.1 – Build a workflow with a Request for Information (20 min)
 
 *Goal: pause automation and ask a named human.*
 
@@ -30,7 +30,7 @@ Automation should stop and ask for review wherever judgment must gate the proces
 
 ✅ **Checkpoint:** the workflow pauses and sends an RFI email to a human.
 
-### Exercise 4.2 — Branch on the human response (15 min)
+### Exercise 4.2 – Branch on the human response (15 min)
 
 *Goal: route the flow on approve vs reject.*
 
@@ -40,7 +40,7 @@ Automation should stop and ask for review wherever judgment must gate the proces
 
 ✅ **Checkpoint:** the gated write only happens on the approved branch.
 
-### Exercise 4.3 — Add an AI Approval stage & test end-to-end (15 min)
+### Exercise 4.3 – Add an AI Approval stage & test end-to-end (15 min)
 
 *Goal: auto-handle the routine, escalate the exceptions, keep a human override.*
 
@@ -68,4 +68,4 @@ Request for Information (RFI) · structured inputs · AI Approvals · multi-stag
 - Add an "ask vs. inform" follow-up and note the difference (ask = two-way and waits; inform = one-way).
 - Wire the approval outcome back into the agent's reply so the user sees the decision and reason.
 
-➡ Next: **[Lab 5 — Monitoring, Testing & Iteration](lab-05-monitoring-testing-iteration.md)** · See also **[Lab 6 — the same HITL task in the new UI](lab-06-old-vs-new-ui.md)**
+➡ Next: **[Lab 5 – Monitoring, Testing & Iteration](lab-05-monitoring-testing-iteration.md)** · See also **[Lab 6 – the same HITL task in the new UI](lab-06-old-vs-new-ui.md)**

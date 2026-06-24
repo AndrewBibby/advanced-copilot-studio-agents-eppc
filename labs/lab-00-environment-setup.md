@@ -1,6 +1,6 @@
-# Lab 0 — Environment Setup
+# Lab 0 – Environment Setup
 
-> **Do this before the workshop.** It takes ~20–30 minutes total, split into short exercises (none longer than 20 min), and removes the single biggest source of delay on the day. If you hit a blocker, note where you got stuck and bring it — we'll triage at the start of the session.
+> **Do this before the workshop.** It takes ~20–30 minutes total, split into short exercises (none longer than 20 min), and removes the single biggest source of delay on the day. If you hit a blocker, note where you got stuck and bring it – we'll triage at the start of the session.
 
 ## Objective
 
@@ -35,7 +35,7 @@ Use your workshop-provided login, then confirm:
 
 ---
 
-## Exercise A — Confirm Power Apps + Dataverse access (≈ 10 min)
+## Exercise A – Confirm Power Apps + Dataverse access (≈ 10 min)
 
 The Developer Plan gives each attendee a personal environment with Power Apps, Power Automate and Dataverse.
 
@@ -56,7 +56,7 @@ The Developer Plan gives each attendee a personal environment with Power Apps, P
 
 ---
 
-## Exercise B — Confirm Copilot Studio access (≈ 5 min)
+## Exercise B – Confirm Copilot Studio access (≈ 5 min)
 
 1. Go to <https://copilotstudio.microsoft.com> and sign in with your provided workshop account.
 2. Select the same developer environment you created/confirmed in Exercise A.
@@ -106,4 +106,4 @@ The Developer Plan gives each attendee a personal environment with Power Apps, P
 - Create a developer environment (Power Apps Developer Plan): <https://learn.microsoft.com/power-platform/developer/create-developer-environment>
 - Explore Power Apps free for 30 days: <https://learn.microsoft.com/power-apps/maker/signup-for-powerapps>
 
-➡ Next: **[Lab 1 — Instruction Tuning & Grounding](lab-01-instruction-tuning-grounding.md)**
+➡ Next: **[Lab 1 – Instruction Tuning & Grounding](lab-01-instruction-tuning-grounding.md)**

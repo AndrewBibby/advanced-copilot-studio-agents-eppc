@@ -1,4 +1,4 @@
-# Lab 5 — Monitoring, Testing & Iteration
+# Lab 5 – Monitoring, Testing & Iteration
 
 **Module 5 · Monitoring, testing & iteration · ~60 min · 3 exercises (≤20 min each)**
 
@@ -11,13 +11,13 @@ Watch your agent the way you would in production, then run a **structured improv
 - An agent you've been building through Labs 1–4 with some test traffic against it.
 - Access to **Copilot Studio analytics**; access to the **Agent 365** workspace and the **Copilot Studio Kit** if available in your tenant (otherwise follow along on the shared environment).
 
-## Background (why this matters)
+## Background
 
-Quality isn't a one-time tuning step — it's a loop. **Copilot Studio analytics** shows per-agent engagement, resolution and generated-answer rate plus transcripts; **Agent 365** is the fleet control plane. The **Copilot Studio Kit** turns ad-hoc checks into repeatable **test sets with rubrics**, which you can wire into a CI/CD **eval gate** so regressions never reach production. The closing loop: **Analyze → Adjust → Re-test → Ship & repeat.**
+Quality isn't a one-time tuning step – it's a loop. **Copilot Studio analytics** shows per-agent engagement, resolution and generated-answer rate plus transcripts; **Agent 365** is the fleet control plane. The **Copilot Studio Kit** turns ad-hoc checks into repeatable **test sets with rubrics**, which you can wire into a CI/CD **eval gate** so regressions never reach production. The closing loop: **Analyze → Adjust → Re-test → Ship & repeat.**
 
 ---
 
-### Exercise 5.1 — Review analytics, transcripts & the fleet view (20 min)
+### Exercise 5.1 – Review analytics, transcripts & the fleet view (20 min)
 
 *Goal: find a concrete gap from real signals.*
 
@@ -27,7 +27,7 @@ Quality isn't a one-time tuning step — it's a loop. **Copilot Studio analytics
 
 ✅ **Checkpoint:** you've identified at least one concrete gap to improve.
 
-### Exercise 5.2 — Build a test set with a rubric (20 min)
+### Exercise 5.2 – Build a test set with a rubric (20 min)
 
 *Goal: make quality measurable and repeatable.*
 
@@ -37,7 +37,7 @@ Quality isn't a one-time tuning step — it's a loop. **Copilot Studio analytics
 
 ✅ **Checkpoint:** a rubric-scored test set runs and produces aggregate scores.
 
-### Exercise 5.3 — Run, adjust & re-test (20 min)
+### Exercise 5.3 – Run, adjust & re-test (20 min)
 
 *Goal: close the loop with a measurable improvement.*
 
