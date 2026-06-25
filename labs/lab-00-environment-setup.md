@@ -1,6 +1,4 @@
-# Lab 0 – Environment Setup
-
-> **Do this before the workshop.** It takes ~20–30 minutes total, split into short exercises (none longer than 20 min), and removes the single biggest source of delay on the day. If you hit a blocker, note where you got stuck and bring it – we'll triage at the start of the session.
+# Lab 0 – Environment Setup and User Access
 
 ## Objective
 
@@ -32,8 +30,6 @@ Use your workshop-provided login, then confirm:
 - **Publishing is not required for the hands-on labs.** The labs focus on creating and testing agents. If publishing is demonstrated, it will be handled by instructors or confirmed separately.
 - **Self-service sign-up/admin blocking guidance** applies mainly to attendees using their own work account, or if a provided workshop account does not behave as expected.
 
-> ⚠️ **Never enter real production credentials, customer data or secrets into trial environments.** Treat everything you build today as throwaway.
-
 ---
 
 ## Exercise A – Confirm Power Apps + Dataverse access (≈ 10 min)
@@ -43,7 +39,7 @@ The Developer Plan gives each attendee a personal environment with Power Apps, P
 > Use your assigned workshop account (for example: `user001@eppcagents2026.onmicrosoft.com`).
 > If you are an experienced user using your own work account and existing environment, validate your setup and skip sign-up steps already completed.
 
-1. Go to **https://make.powerapps.com** and sign in.
+1. Go to **https://make.powerapps.com/** and sign in.
 2. **Check whether you already have a developer environment.** In the top-right, open the **environment picker** and look for an environment labeled **"Developer"**, **"Default"**, or with a name like **"[Your Name]'s environment"**. If you see one, it's your developer environment.
 3. **Only if you do not already have a developer environment:**
    - Open the Developer Plan sign-up page: **https://aka.ms/PowerAppsDevPlan**
