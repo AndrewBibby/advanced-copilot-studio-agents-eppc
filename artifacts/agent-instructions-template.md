@@ -1,6 +1,8 @@
 # Agent instructions template
 
-A copy-ready system-prompt skeleton built on the **Role / Objective / Tool-usage / Reasoning & grounding** pattern. Keep it tight — up to ~8,000 characters, but start simple and iterate. Specific, testable instructions beat long prose.
+A copy-ready system-prompt skeleton built on the **Role / Objective / Tool-usage / Reasoning & grounding** pattern. Keep it tight — start simple and iterate. Specific, testable instructions beat long prose.
+
+When one agent owns everything, instructions are often longer and more text-heavy because routing, guardrails, and domain rules all live in one prompt. With connected/child agents, each agent can stay shorter and more focused because responsibilities are split by design.
 
 > Replace everything in `{{curly braces}}`. Delete sections you don't need.
 

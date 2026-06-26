@@ -20,8 +20,14 @@ Most hallucinations come from vague instructions and over-broad knowledge, not f
 
 *Goal: create your first draft agent directly from a natural-language prompt*
 
-1. Open Copilot Studio: <https://copilotstudio.microsoft.com>. Then select **Create** and describe the agent in one prompt.
-2. Use this starter prompt (adapt the domain if needed):
+1. Open Copilot Studio: <https://copilotstudio.microsoft.com>.
+2. Create (or select) a solution before creating the agent:
+   - Open **Solutions**.
+   - Select **+ New solution**.
+   - Enter **Display name** (for example, `Lab 01 Agents`), then confirm **Publisher** and **Version**.
+   - Select **Create**, then make sure this solution is selected as your default/target solution.
+3. Select **Create** and describe the agent in one prompt.
+4. Use this starter prompt (adapt the domain if needed):
 
 ```text
 Create an internal IT support orchestrator agent for Contoso.
@@ -45,12 +51,12 @@ Boundaries:
 - Never execute destructive actions without explicit user confirmation.
 ```
 
-3. Save the generated agent and confirm your core authoring surfaces are available for instructions, knowledge, and connected/child agent delegation.
-4. Write a one-sentence use case for connected agents: *"One orchestrator + 2-3 specialists with clear ownership boundaries."*
+5. Save the generated agent and confirm your core authoring surfaces are available for instructions, knowledge, and connected/child agent delegation.
+6. Write a one-sentence use case for connected agents: *"One orchestrator + 2-3 specialists with clear ownership boundaries."*
 
 **New UI equivalent (optional):** In Copilot Studio (<https://copilotstudio.microsoft.com>), you would do the same setup on the **Build** tab and configure delegation in **Connected agents** (alongside **Instructions**, **Knowledge**, **Tools and skills**, and **Model**).
 
-✅ **Checkpoint:** you have an agent created from a prompt, and a concrete connected-agent pattern ready to implement.
+✅ **Checkpoint:** you have a solution created/selected, an agent created from a prompt, and a concrete connected-agent pattern ready to implement.
 
 ### Exercise 1.2 – Baseline & rewrite agent instructions (15 min)
 
