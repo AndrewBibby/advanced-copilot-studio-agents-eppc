@@ -1,4 +1,4 @@
-# Lab 0 – Environment Setup and User Access
+# Lab 0 – Environment Setup
 
 ## Objective
 
@@ -18,17 +18,8 @@ Use your workshop-provided login, then confirm:
 
 ## Prerequisites & key facts
 
-- **Use the workshop login by default.** All attendees will receive a login for the labs. This is the supported path for the workshop.
-- **Licences for workshop users are assigned centrally before the event:**
-  - Microsoft Power Apps for Developer
-  - Microsoft Copilot Studio Viral Trial
-- **You may still need to complete the Power Apps Developer Plan flow** to create your own personal developer environment.
-- If you are using the own-tenant path, see the **Appendix – Own-tenant path (limited support)** below for sign-up notes.
-- **Experienced-user exception (use your own work account).** You may use your own work login only if you already have access to **Power Apps**, **Copilot Studio**, and a **developer environment with Dataverse** in your work tenant.
-- **Support boundary.** We can't provide lab support for issues caused by using your own work login/environment (tenant policies, licences, DLP, admin restrictions, or environment policies).
-- **Account type still matters.** Personal email addresses (outlook.com, hotmail.com, gmail.com, etc.) are not supported for the own-tenant sign-up path.
-- **Publishing is not required for the hands-on labs.** The labs focus on creating and testing agents. If publishing is demonstrated, it will be handled by instructors or confirmed separately.
-- **Self-service sign-up/admin blocking guidance** applies mainly to attendees using their own work account, or if a provided workshop account does not behave as expected.
+- **User Credentials**: You have already claimed your credentials for using Power Platform and creating a developer environment
+  If not, the go to **https://cathrinebruvold.github.io/Workshop-Attendee-Application/** and claim a user.
 
 ---
 
@@ -40,7 +31,7 @@ The Developer Plan gives each attendee a personal environment with Power Apps, P
 > If you are an experienced user using your own work account and existing environment, validate your setup and skip sign-up steps already completed.
 
 1. Go to **https://make.powerapps.com/** and sign in.
-2. **Check whether you already have a developer environment.** In the top-right, open the **environment picker** and look for an environment labeled **"Developer"**, **"Default"**, or with a name like **"[Your Name]'s environment"**. If you see one, it's your developer environment.
+2. **Check whether you already have a developer environment.** In the top-right, open the **environment picker** and look for an environment labeled **"Developer"** or with a name like **"[Your Name]'s environment"**. If you see one, it's your developer environment.
 3. **Only if you do not already have a developer environment:**
    - Open the Developer Plan sign-up page: **https://aka.ms/PowerAppsDevPlan**
      (equivalently: <https://www.microsoft.com/power-platform/products/power-apps/free>).
