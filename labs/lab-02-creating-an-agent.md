@@ -54,4 +54,4 @@ Solution-first authoring · prompt-first agent creation · authoring surfaces (I
 - [ ] All four authoring surfaces — **Instructions**, **Knowledge**, **Tools**, **Model** — are visible and accessible.
 - [ ] I can locate the equivalent surfaces on the **New UI Build tab**.
 
-➡ Next: **[Lab 3 – Instruction Tuning & Grounding](lab-02-instruction-tuning-grounding.md)** · See also **[Lab 8 – the same setup in the new UI](lab-07-old-vs-new-ui.md)**
+➡ Next: **[Lab 3 – Instruction Tuning & Grounding](lab-03-instruction-tuning-grounding.md)** · See also **[Lab 8 – the same setup in the new UI](lab-07-old-vs-new-ui.md)**

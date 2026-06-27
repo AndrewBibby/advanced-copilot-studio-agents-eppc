@@ -17,7 +17,7 @@ Most hallucinations come from vague instructions and over-broad knowledge, not f
 
 ---
 
-### Exercise 2.1 – Rewrite agent instructions using the four-block pattern (10 min)
+### Exercise 3.1 – Rewrite agent instructions using the four-block pattern (10 min)
 
 *Goal: apply the four-block instruction pattern to your agent and capture a "before vs after".*
 
@@ -56,7 +56,7 @@ Most hallucinations come from vague instructions and over-broad knowledge, not f
 
 ✅ **Checkpoint:** instructions have four clearly labelled blocks; responses are more consistent and traceable.
 
-### Exercise 2.2 – Set grounding dials & verify citations (10 min)
+### Exercise 3.2 – Set grounding dials & verify citations (10 min)
 
 *Goal: make answers traceable and stop fallback to general model knowledge.*
 
