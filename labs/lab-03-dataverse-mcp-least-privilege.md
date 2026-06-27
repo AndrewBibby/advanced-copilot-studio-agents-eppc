@@ -1,6 +1,6 @@
-# Lab 2 – Dataverse MCP & Least-Privilege Data Access
+# Lab 4 – Dataverse MCP & Least-Privilege Data Access
 
-**Module 2 · Dataverse MCP & least-privilege data access · ~75 min · 4 exercises (≤20 min each)**
+**Module 4 · Dataverse MCP & least-privilege data access · ~75 min · 4 exercises (≤20 min each)**
 
 ## Objective
 
@@ -74,6 +74,6 @@ Dataverse MCP · tool scoping (allowed-clients & allowed-tools) · least-privile
 
 - Add a **Prompt Tool** for reasoning over a pre-filtered set (<~1,000 rows).
 - Bring in a **Microsoft Foundry** model (BYOM) or a connected Foundry agent and compare answer quality/cost.
-- Add a second **connected agent** specialising in a different table and let the orchestrator route between them (sets up Lab 4).
+- Add a second **connected agent** specialising in a different table and let the orchestrator route between them (sets up Lab 5).
 
-➡ Next: **[Lab 3 – Authentication, DLP & Entitlement](lab-03-auth-dlp-entitlement.md)**
+➡ Next: **[Lab 5 – Authentication, DLP & Entitlement](lab-04-auth-dlp-entitlement.md)**

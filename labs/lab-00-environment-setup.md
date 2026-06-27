@@ -106,4 +106,4 @@ Use this path only if you are intentionally working in your own work tenant rath
 3. If sign-up is blocked by your organisation, contact your IT admin or use the workshop-provided login instead.
 4. Personal email accounts are not supported for this path.
 
-➡ Next: **[Lab 1 – Instruction Tuning & Grounding](lab-01-instruction-tuning-grounding.md)**
+➡ Next: **[Lab 1 – Designing an Agent for a Use Case](lab-01-agent-design.md)**

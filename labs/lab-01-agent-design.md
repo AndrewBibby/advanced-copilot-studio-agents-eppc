@@ -150,5 +150,5 @@ Build surface decision tree · specialists over generalists · child vs connecte
 
 ---
 
-➡ **Next: [Lab 2 — Extend with Dataverse MCP & tools](lab-02-dataverse-mcp-tools.md)**  
-Apply your instructions hands-on in the **[new UI in Lab 6](lab-06-old-vs-new-ui.md)**
+➡ **Next: [Lab 2 — Creating an Agent](lab-02-creating-an-agent.md)**  
+Apply your instructions hands-on in the **[new UI in Lab 8](lab-07-old-vs-new-ui.md)**

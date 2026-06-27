@@ -1,4 +1,4 @@
-# Lab 6 – Old UI → New UI: The Same Tasks in the New Agent Experience
+# Lab 8 – Old UI → New UI: The Same Tasks in the New Agent Experience
 
 **Cross-cutting · ~60 min · 3 exercises (≤20 min each)**
 
@@ -90,4 +90,4 @@ New agent experience (Build / Preview / Evaluate / Monitor) · Instructions + re
 - **Choose Classic** when you need deterministic, auditable step-by-step control (compliance-critical, regulated, heavily branched flows), or a feature only Classic currently exposes.
 - **Remember:** no migration path, and Classic agents don't appear as connected agents in New (or vice-versa). Decide the experience *before* you invest in building.
 
-➡ Related: **[Lab 1](lab-01-instruction-tuning-grounding.md)** · **[Lab 4](lab-04-workflow-approval-gates.md)** · **[agenda & UI orientation](../docs/agenda.md)**
+➡ Related: **[Lab 1](lab-01-agent-design.md)** · **[Lab 6](lab-05-workflow-approval-gates.md)** · **[agenda & UI orientation](../docs/agenda.md)**

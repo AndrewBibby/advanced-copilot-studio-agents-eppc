@@ -1,6 +1,6 @@
-# Lab 4 – Workflow Approval Gates
+# Lab 6 – Workflow Approval Gates
 
-**Module 4 · Workflow approval gates · ~45 min · 3 exercises (≤20 min each)**
+**Module 6 · Workflow approval gates · ~45 min · 3 exercises (≤20 min each)**
 
 ## Objective
 
@@ -68,4 +68,4 @@ Request for Information (RFI) · structured inputs · AI Approvals · multi-stag
 - Add an "ask vs. inform" follow-up and note the difference (ask = two-way and waits; inform = one-way).
 - Wire the approval outcome back into the agent's reply so the user sees the decision and reason.
 
-➡ Next: **[Lab 5 – Monitoring, Testing & Iteration](lab-05-monitoring-testing-iteration.md)** · See also **[Lab 6 – the same HITL task in the new UI](lab-06-old-vs-new-ui.md)**
+➡ Next: **[Lab 7 – Monitoring, Testing & Iteration](lab-06-monitoring-testing-iteration.md)** · See also **[Lab 8 – the same HITL task in the new UI](lab-07-old-vs-new-ui.md)**

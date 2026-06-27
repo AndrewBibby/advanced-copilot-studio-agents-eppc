@@ -1,6 +1,6 @@
-# Lab 3 – Authentication, DLP & Entitlement
+# Lab 5 – Authentication, DLP & Entitlement
 
-**Module 3 · Authentication, DLP & entitlement · ~60 min · 3 exercises (≤20 min each)**
+**Module 5 · Authentication, DLP & entitlement · ~60 min · 3 exercises (≤20 min each)**
 
 ## Objective
 
@@ -66,4 +66,4 @@ Microsoft Entra ID · SSO · on-behalf-of (OBO) · DLP policies · endpoint filt
 - Estimate the agent's **Copilot Credits** with the usage estimator and identify the biggest cost lever.
 - Enable a **Managed Environment** sharing control and observe what it prevents.
 
-➡ Next: **[Lab 4 – Workflow Approval Gates](lab-04-workflow-approval-gates.md)**
+➡ Next: **[Lab 6 – Workflow Approval Gates](lab-05-workflow-approval-gates.md)**

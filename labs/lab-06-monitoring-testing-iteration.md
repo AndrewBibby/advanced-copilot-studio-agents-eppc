@@ -1,6 +1,6 @@
-# Lab 5 – Monitoring, Testing & Iteration
+# Lab 7 – Monitoring, Testing & Iteration
 
-**Module 5 · Monitoring, testing & iteration · ~60 min · 3 exercises (≤20 min each)**
+**Module 7 · Monitoring, testing & iteration · ~60 min · 3 exercises (≤20 min each)**
 
 ## Objective
 
