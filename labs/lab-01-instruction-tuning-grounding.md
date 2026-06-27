@@ -22,42 +22,28 @@ Most hallucinations come from vague instructions and over-broad knowledge, not f
 
 1. Open Copilot Studio: <https://copilotstudio.microsoft.com>.
 2. Create a solution before creating the agent:
-   - Open **Solutions**.
+   - Open **Solutions** by clicking on the three dots under **Tools** and selecting **Solutions**.
    - Select **+ New solution**.
-   - Enter **Display name** (for example, `EPPC Agents`), then confirm **Publisher** and **Version**.
-   - Select **Create**, then make sure this solution is selected as your default/target solution.
+   - Enter **Display name** (for example, `EPPC Agents` or `EPPC 2026`), then create and confirm **Publisher**.
+   - Select **Create**
+3. Navigate back to <https://copilotstudio.microsoft.com> and click the **settings wheel** to select your new solution. 
 
+![alt text](../Assets/E1_1.png)
 
-
-3. Select **Create** and describe the agent in one prompt.
-4. Use this starter prompt (adapt the domain if needed):
+4. Use this starter prompt or use your own use case:
 
 ```text
-Create an internal IT support orchestrator agent for Contoso.
+Assist bankers in identifying, investigating, and managing potential fraud and anti-money laundering cases. Help users gather information, understand internal procedures, coordinate investigative activities, and ensure cases are handled consistently and in accordance with bank policies.
 
-Role:
-- Triage employee IT requests and route to the right specialist.
-
-Behaviour:
-- Ask clarifying questions before taking action.
-- Use only approved knowledge sources.
-- Provide short, actionable answers with citations when factual.
-- If uncertain, say what is missing and ask for the next required detail.
-
-Routing intent:
-- Delegate password and MFA issues to a Security Access specialist agent.
-- Delegate device compliance issues to an Endpoint Compliance specialist agent.
-- Delegate software/license questions to a Software Catalog specialist agent.
-
-Boundaries:
-- Never invent policy details.
-- Never execute destructive actions without explicit user confirmation.
 ```
 
-5. Save the generated agent and confirm your core authoring surfaces are available for instructions, knowledge, and connected/child agent delegation.
+
+5. Click on the **right arrow** to create the agent. Save the generated agent and confirm your core authoring surfaces are available for editing: **Instructions**, **Knowledge**, **Tools** and **Model** etc.
 
 
-**New UI equivalent (optional):** In Copilot Studio (<https://copilotstudio.microsoft.com>), you would do the same setup on the **Build** tab and configure delegation in **Connected agents** (alongside **Instructions**, **Knowledge**, **Tools and skills**, and **Model**).
+**New UI equivalent (optional):** In Copilot Studio (<https://copilotstudio.microsoft.com>) -> **New experience**, you would do the same setup on the **Build** tab without the prompt to describe the agent. 
+
+![alt text](../Assets/E1_2.png)
 
 ✅ **Checkpoint:** you have created a solution and an agent from a prompt
 
@@ -71,6 +57,30 @@ Boundaries:
    - **Objective & task flow** - the steps; check after each tool call whether the objective is met.
    - **Tool-usage rules** - when to call which tool; "read each tool description and follow it exactly".
    - **Reasoning & grounding rules** - reason step by step; *never answer from general knowledge - always retrieve*; on error, surface and retry.
+
+   **Example** (for the fraud/AML use case):
+   ```
+   **ROLE**
+   You are a Fraud & AML Case Assistant. Your single job is to help compliance officers investigate and document suspected fraud and money laundering cases according to bank policies.
+   
+   **OBJECTIVE & TASK FLOW**
+   1. When a user reports a case, retrieve the relevant case details and policies from the knowledge base.
+   2. Guide the user through the investigation workflow (evidence gathering, risk assessment, escalation decision).
+   3. After each retrieval, confirm whether we have enough information to move to the next step. If not, ask clarifying questions.
+   4. When complete, summarize findings and next steps with citations to policy.
+   
+   **TOOL-USAGE RULES**
+   - Use SearchCases to find existing cases (never reason about case history from memory).
+   - Use CompliancePolicy to retrieve procedures (read the policy exactly; do not paraphrase or generalize).
+   - Use DocumentEvidence to log investigation steps (always log before proceeding to the next step).
+   - Do not use general knowledge to advise on AML thresholds or regulatory requirements—retrieve them.
+   
+   **REASONING & GROUNDING RULES**
+   - Always retrieve the specific bank policy for each investigative step before advising.
+   - Never answer "I think this should be escalated" without first retrieving the escalation criteria.
+   - If a tool returns no results, surface the gap ("I cannot find a matching policy for this scenario") and ask the user to confirm the case details or context.
+   - On error, retry the search with refined criteria and explain what you tried.
+   ```
 
 ✅ **Checkpoint:** instructions now have four clearly labelled blocks and a one-line identity.
 
