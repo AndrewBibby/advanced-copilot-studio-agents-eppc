@@ -43,7 +43,7 @@ The new experience consolidates topics, triggers, and branching logic into **Ins
 
 2. **Locate the five Build components:**
    - **Instructions:** paste the Role / Objective / Tool-usage / Reasoning pattern from [`artifacts/agent-instructions-template.md`](../artifacts/agent-instructions-template.md).
-   - **Knowledge:** upload the same knowledge source you used in a Classic lab.
+   - **Knowledge:** upload the same knowledge source you used in a Classic lab (lab 02).
    - **Tools and skills:** add a connector (e.g., Dataverse) or a simple HTTP action.
    - **Model:** observe the reasoning tier setting (equivalent to Classic Orchestration mode).
    - **Connected agents:** leave empty for now (this is how you call other agents).
@@ -61,7 +61,7 @@ The new experience consolidates topics, triggers, and branching logic into **Ins
 
 ## Quick reference: HITL workflows in the new UI (bonus comparison)
 
-If you want to quickly see how Classic HITL workflows map to the new experience:
+If you want to quickly see how Classic Human-in-the-Loop (HITL) workflows map to the new experience:
 
 - **Classic:** agent trigger → topic routing → branching nodes → Dataverse action
 - **New:** Workflow (redesigned designer) → RFI node (human gate) → Agent node (inline or published) → output
