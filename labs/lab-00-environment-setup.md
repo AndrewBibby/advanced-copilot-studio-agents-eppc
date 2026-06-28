@@ -45,6 +45,13 @@ The Developer Plan gives each attendee a personal environment with Power Apps, P
 1. In **make.powerapps.com**, with your developer environment selected, expand **Dataverse** in the left navigation and choose **Tables**.
 2. You should see standard tables (Account, Contact, etc.). If you can list tables, Dataverse is ready. ✅
 
+### Install sample data in PPAC
+
+1. Open the **Power Platform admin center (PPAC)**: <https://admin.powerplatform.microsoft.com>.
+2. Select your developer environment.
+3. Go to **Settings** → **Data management** → **Sample data**.
+4. Select **Install sample data** and wait for installation to complete.
+
 ---
 
 ## Exercise B – Confirm Copilot Studio access (≈ 5 min)
@@ -69,6 +76,7 @@ The Developer Plan gives each attendee a personal environment with Power Apps, P
 - [ ] I can sign in with my **provided lab login** (or approved work login).
 - [ ] I have a **developer environment** visible in the environment picker.
 - [ ] I can list **Dataverse tables** in that environment.
+- [ ] I installed **Sample data** in PPAC for that environment.
 - [ ] I can open **copilotstudio.microsoft.com** with my assigned lab login (or approved work login).
 - [ ] I created a **test agent** and got a reply in the Test panel.
 
