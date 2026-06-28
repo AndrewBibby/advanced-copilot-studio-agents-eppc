@@ -49,6 +49,7 @@ The Developer Plan gives each attendee a personal environment with Power Apps, P
 
 1. Open the **Power Platform admin center (PPAC)**: <https://admin.powerplatform.microsoft.com>.
 2. Select your developer environment.
+  - If you do not see your environment in PPAC yet, wait a few minutes and refresh; new environments can take time to appear.
 3. Go to **Settings** → **Data management** → **Sample data**.
 4. Select **Install sample data** and wait for installation to complete.
 
