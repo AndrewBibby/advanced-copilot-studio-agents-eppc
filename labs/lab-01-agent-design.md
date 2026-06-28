@@ -14,7 +14,7 @@ The most expensive mistakes in agent development happen in the first ten minutes
 When instructions grow long, that's a signal to *split the agent*, not to add more text. A well-scoped specialist with 150 words of instructions outperforms a generalist with 1,500. Design the responsibilities first.
 
 **2. Specialists over generalists.**  
-Each agent should have *one job*. One knowledge source. One clear boundary. When a single agent owns IT answers, HR answers, ticket-logging and user escalation, it will route badly and hallucinate confidently. Split the jobs, then connect the pieces.
+Each agent should have *one job*. One knowledge source, or group of related knowledge sources. One clear boundary. When a single agent owns IT answers, HR answers, ticket-logging and user escalation, it will route badly and hallucinate confidently. Split the jobs, then connect the pieces.
 
 **3. The three link types define your governance.**  
 - **Child / sub-agent** — same team, same lifecycle, inherits parent's security and settings. Simplest to build; hardest to reuse.  
