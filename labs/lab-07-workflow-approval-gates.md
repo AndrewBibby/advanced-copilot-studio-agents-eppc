@@ -1,6 +1,6 @@
 # Lab 6 – Workflow Approval Gates: HITL for Critical Actions
 
-**Module 6 · Human-in-the-loop (HITL) approval gates · ~20 min · 1 exercise**
+**Module 4 · Human-in-the-loop (HITL) approval gates · ~20 min · 1 exercise**
 
 ## Objective
 
@@ -79,4 +79,4 @@ Request for Information (RFI) · human-in-the-loop (HITL) · approval branching 
 - Wire the **approval outcome back into the agent's reply** so the end user sees "Your account request was approved on [date] by [reviewer]."
 - Explore **AI Approvals** to auto-approve routine requests and escalate exceptions.
 
-➡ Next: **[Lab 7 – Monitoring, Testing & Iteration](lab-06-monitoring-testing-iteration.md)** · See also **[Lab 8 – the same HITL task in the new UI](lab-07-old-vs-new-ui.md)**
+➡ Next: **[Lab 7 – Monitoring, Testing & Iteration](lab-06-monitoring-testing-iteration.md)** · See also **[Lab 8 – Old UI → New UI](lab-08-old-vs-new-ui.md)**

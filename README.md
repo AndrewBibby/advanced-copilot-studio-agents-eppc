@@ -10,11 +10,13 @@ This repository contains the hands-on labs, sample artifacts and reference mater
 
 ## About the session
 
-This full-day workshop is aimed at technical makers, developers and solution architects who already use Copilot Studio and want to build agents that work reliably in real-world scenarios. We start with agent design – prompt guidance, context management and grounding techniques that reduce hallucinations and improve consistency from day one – so attendees leave with design patterns they can apply immediately.
+**Aimed at experienced builders** who've already built agents in Copilot Studio and want to take them to production. This condensed workshop (~2.5 hours, modular) covers the full lifecycle: **design → extend → govern → keep humans in the loop → monitor & improve**.
 
-From there we move into the challenges that appear once agents leave the demo stage and reach production. Based on real-world projects, we cover authentication and authorisation, cost control and usage limits, and how to design effective human-in-the-loop flows. You will also learn how to use Dataverse with an MCP server, and how to bring services like Microsoft Foundry and Azure AI Search into Copilot Studio in a controlled, practical way. The day follows the natural lifecycle of an agent – design → testing → operation → evaluation.
+We start with agent design – job framing and architecture decisions that set you up for success. From there, we move into instruction tuning and grounding (the knobs that reduce hallucinations), then into the production challenges: **authentication patterns, DLP governance, HITL approval gates, and continuous improvement loops**. 
 
-The workshop is structured into clear modules, each supported by hands-on labs and guided exercises. Labs cover instruction tuning and grounding, Dataverse MCP access, identity and DLP controls, workflow approval gates, and monitoring plus iterative improvement.
+A key focus is **DLP and environment security** – a governance pain point we address through a discovery-based exercise: "see the risk (no DLP) → fix it (create DLP) → verify impact (DLP blocks tools)" plus a **connector reference matrix** (10 connectors × 4 environment tiers with Clear Allow/Block/Conditional guidance). We also cover Dataverse with MCP servers, showing you how to build specialist subagents that respect RBAC through OBO authentication. The day follows the natural lifecycle of an agent – design → build → govern → test → operate.
+
+Each lab is 20 minutes max, so there's always a clean stopping point. Labs stand alone – pick what you need for your scenario.
 
 ### Key takeaways
 
@@ -35,23 +37,23 @@ The workshop is structured into clear modules, each supported by hands-on labs a
 
 ## Agenda
 
-Every lab is split into **short exercises of no more than 20 minutes each**, so you always have a clean stopping point.
+**Condensed for experienced builders: 8 focused labs (~20 min each) covering the full agent lifecycle (~2.5 hours total, modular – pick what you need).** Each lab is capped at 20 minutes. Every lab stands alone; prerequisites are listed.
 
-| # | Module | Lab | Duration | Exercises |
-|---|--------|-----|----------|-----------|
-| – | New Copilot Studio UI – changes & new features | – | 15 min | – |
-| 01 | [Designing reliable agents](docs/agenda.md#module-1) | [Lab 1 – Instruction Tuning & Grounding](labs/lab-01-instruction-tuning-grounding.md) | 60 min | 3 × 20 min |
-| 02 | [Extending agents – tools & data](docs/agenda.md#module-2) | [Lab 2 – Dataverse MCP & Least-Privilege Data Access](labs/lab-02-dataverse-mcp-least-privilege.md) | 75 min | 4 × ≤20 min |
-| 03 | [Governing & securing agents](docs/agenda.md#module-3) | [Lab 3 – Authentication, DLP & Entitlement](labs/lab-03-auth-dlp-entitlement.md) | 60 min | 3 × 20 min |
-| 04 | [Workflow checkpoint & orchestration](docs/agenda.md#module-4) | [Lab 4 – Workflow Approval Gates](labs/lab-04-workflow-approval-gates.md) | 45 min | 3 × ≤20 min |
-| 05 | [Test, monitor, evaluate & improve](docs/agenda.md#module-5) | [Lab 5 – Monitoring, Testing & Iteration](labs/lab-05-monitoring-testing-iteration.md) | 60 min | 3 × 20 min |
-| ✦ | Old UI → New UI (cross-cutting) | [Lab 6](labs/lab-06-old-vs-new-ui.md) | 60 min | 3 × ≤20 min |
+| # | Module | Lab | Duration | 
+|---|--------|-----|----------|
+| 0 | **Setup** | [Lab 0 – Environment Setup](labs/lab-00-environment-setup.md) | ~15 min |
+| 1 | **Design & Build** | [Lab 1 – Agent Design](labs/lab-01-agent-design.md) · [Lab 2 – Creating an Agent](labs/lab-02-creating-an-agent.md) | 17 + 20 = ~37 min |
+| 2 | **Extend with Tools & Data** | [Lab 3 – Instruction Tuning & Grounding](labs/lab-03-instruction-tuning-grounding.md) · [Lab 4 – Subagent & Dataverse MCP](labs/lab-04-subagent-Dataverse-mcp.md) | 20 + 20 = ~40 min |
+| 3 | **Govern & Secure** | [Lab 5 – Auth, DLP & Entitlement](labs/lab-05-auth-dlp-entitlement.md) | ~20 min |
+| 4 | **HITL Approval Gates** | [Lab 6 – Workflow Approval Gates](labs/lab-07-workflow-approval-gates.md) | ~20 min |
+| 5 | **Monitor & Improve** | [Lab 7 – Monitoring, Testing & Iteration](labs/lab-06-monitoring-testing-iteration.md) | ~20 min |
+| ✦ | **Optional: UI Choice** | [Lab 8 – Old UI → New UI](labs/lab-08-old-vs-new-ui.md) | ~20 min |
 
 > **Before you arrive:** complete **[Lab 0 – Environment Setup](labs/lab-00-environment-setup.md)** to provision a free Power Apps Developer Plan environment (with Dataverse) and a Copilot Studio trial. This takes ~20–30 minutes and removes the biggest source of delay on the day.
 
 > **Publishing note:** only attendees using provided lab credentials can publish agents in the workshop lab environment (this is optional, not required). Attendees using their own tenant can still complete the labs, but publishing depends on their own tenant/licensing/policy setup and isn't supported by the workshop team.
 
-> **Optional / time-permitting:** **[Lab 6 – Old UI → New UI](labs/lab-06-old-vs-new-ui.md)** re-creates Lab 1 and Lab 4 in the new agent experience so attendees see exactly how the new Build surface, Skills and Workflows map to the Classic topics/flows they already know.
+> **Optional / time-permitting:** **[Lab 8 – Old UI → New UI](labs/lab-08-old-vs-new-ui.md)** is a quick concept map showing how Classic topics/triggers/flows map to the new Build, Skills and Workflows, so you can decide which experience to use for your next project.
 
 ---
 
@@ -63,13 +65,15 @@ advanced-copilot-studio-training/
 ├── docs/
 │   └── agenda.md              ← module-by-module overview & timing
 ├── labs/
-│   ├── lab-00-environment-setup.md     ← DO THIS FIRST (trial sign-up)
-│   ├── lab-01-instruction-tuning-grounding.md
-│   ├── lab-02-dataverse-mcp-least-privilege.md
-│   ├── lab-03-auth-dlp-entitlement.md
-│   ├── lab-04-workflow-approval-gates.md
-│   ├── lab-05-monitoring-testing-iteration.md
-│   └── lab-06-old-vs-new-ui.md         ← redo Lab 1 & Lab 4 in the new UI
+│   ├── lab-00-environment-setup.md                    ← DO THIS FIRST (trial sign-up)
+│   ├── lab-01-agent-design.md
+│   ├── lab-02-creating-an-agent.md
+│   ├── lab-03-instruction-tuning-grounding.md
+│   ├── lab-04-subagent-Dataverse-mcp.md
+│   ├── lab-05-auth-dlp-entitlement.md
+│   ├── lab-07-workflow-approval-gates.md
+│   ├── lab-06-monitoring-testing-iteration.md
+│   └── lab-08-old-vs-new-ui.md                       ← optional: decide Classic vs. New UI
 └── artifacts/                 ← copy-ready templates & checklists
     ├── agent-instructions-template.md
     ├── prompt-tool-templates.md
@@ -83,9 +87,10 @@ advanced-copilot-studio-training/
 
 ## How to use this repo
 
-1. **Attendees:** start with [Lab 0](labs/lab-00-environment-setup.md) **before the workshop**. On the day, work through Labs 1–5 in order; each maps to the module being presented.
-2. **Facilitators:** the [agenda](docs/agenda.md) carries timing and the key concepts behind each module. The [artifacts](artifacts/) are the copy-ready material attendees reuse during labs.
-3. **After the day:** the artifacts double as a starter kit for your own production agents – reuse the instruction template, the orchestration checklist and the DLP/environment strategy in your own tenant.
+1. **Attendees:** start with [Lab 0](labs/lab-00-environment-setup.md) **before the workshop**. On the day, work through Labs 1–7 in sequence; each is 20 min and stands alone. Labs 3–5 are strongly recommended for governance/security best practices.
+2. **Pick-and-choose:** each lab is independent (prerequisites listed in each). Skip what you know; deep-dive what's new for your scenario.
+3. **Facilitators:** the [agenda](docs/agenda.md) carries timing, key concepts and module structure. The [artifacts](artifacts/) are the copy-ready templates attendees reuse during labs.
+4. **After the day:** the artifacts are a starter kit for your own production agents – reuse the instruction template, the orchestration checklist and the DLP/environment strategy guidance in your own tenant.
 
 ---
 

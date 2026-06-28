@@ -143,4 +143,4 @@ DLP policies · block-all mindset · endpoint filtering · On-behalf-of (OBO) au
 - Map the **four-tier strategy** to your org: where do you need Direct Line, and does it conflict with tenant DLP?
 - Document the **exception list** — if you had to allow SharePoint or Teams, what endpoints and why?
 
-➡ Next: **[Lab 6 – Workflow Approval Gates](lab-06-workflow-approval-gates.md)**
+➡ Next: **[Lab 6 – Workflow Approval Gates](lab-07-workflow-approval-gates.md)**

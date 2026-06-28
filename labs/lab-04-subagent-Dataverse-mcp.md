@@ -78,4 +78,4 @@ Subagent architecture · scope (one table, one responsibility) · least-privileg
 - Enable one write tool (e.g., `create_record`) and add a **HITL checkpoint** in the parent to approve writes before delegation.
 - Measure query cost and latency; compare MCP vs. other Dataverse retrieval patterns (Knowledge, Search Query, Prompt Tool).
 
-➡ Next: **[Lab 5 – Authentication, DLP & Entitlement](lab-04-auth-dlp-entitlement.md)**
+➡ Next: **[Lab 5 – Auth, DLP & Entitlement](lab-05-auth-dlp-entitlement.md)**

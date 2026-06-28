@@ -91,4 +91,4 @@ Concept mapping (Classic → New) · Instructions + reasoning · Skills (reusabl
 
 **Key reminder:** No migration path between Classic and New. Decide *before* building.
 
-➡ Related: **[Lab 1 – Agent Design](lab-01-agent-design.md)** · **[Lab 6 – Approval Gates](lab-06-workflow-approval-gates.md)** · **[Agenda](../docs/agenda.md)**
+➡ Related: **[Lab 1 – Agent Design](lab-01-agent-design.md)** · **[Lab 6 – Approval Gates](lab-07-workflow-approval-gates.md)** · **[Agenda](../docs/agenda.md)**

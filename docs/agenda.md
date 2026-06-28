@@ -64,7 +64,7 @@
 
 **Lab 4 (~20 min):** Build a specialist subagent wired to Dataverse MCP. Create the MCP server, scope read-only tools, establish inheritance patterns for permission checks, test end-to-end with the parent agent.
 
-➡ **[Lab 3 – Instruction Tuning & Grounding](../labs/lab-03-instruction-tuning-grounding.md)** · **[Lab 4 – Subagent & Dataverse MCP](../labs/lab-04-subagent-dataverse-mcp.md)**
+➡ **[Lab 3 – Instruction Tuning & Grounding](../labs/lab-03-instruction-tuning-grounding.md)** · **[Lab 4 – Subagent & Dataverse MCP](../labs/lab-04-subagent-Dataverse-mcp.md)**
 
 ---
 
@@ -99,7 +99,7 @@
 
 **Lab 6 (~20 min):** Build and test an approval gate workflow. Create an RFI node, configure it to pause and email a reviewer, add approval branching (approve = create account; reject = stop), capture comments for audit, test end-to-end from the agent triggering the workflow.
 
-➡ **[Lab 6 – Workflow Approval Gates](../labs/lab-06-workflow-approval-gates.md)**
+➡ **[Lab 6 – Workflow Approval Gates](../labs/lab-07-workflow-approval-gates.md)**
 
 ---
 
@@ -116,7 +116,7 @@
 
 **Lab 7 (~20 min):** (Pending condensing to 20 min; currently ~60 min across 3 exercises.)
 
-➡ **[Lab 7 – Monitoring, Testing & Iteration](../labs/lab-07-monitoring-testing-iteration.md)**
+➡ **[Lab 7 – Monitoring, Testing & Iteration](../labs/lab-06-monitoring-testing-iteration.md)**
 
 ---
 

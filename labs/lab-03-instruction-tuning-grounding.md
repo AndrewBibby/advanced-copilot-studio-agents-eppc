@@ -8,7 +8,6 @@ Improve accuracy and consistency by applying the four-block instruction pattern 
 
 ## Prerequisites
 
-- Lab 1 complete (agent designed): [Lab 1 – Designing an Agent for a Use Case](lab-01-agent-design.md)
 - Lab 2 complete (agent created): [Lab 2 – Creating an Agent](lab-02-creating-an-agent.md)
 
 ## Background
@@ -86,4 +85,4 @@ Four-block instruction pattern · agent-level instructions · topic-level genera
 - Reduce response length in Generative AI settings and observe the effect on quality.
 - Capture your 3 questions as the seed of a **test set** you'll automate in [Lab 7 – Monitoring, Testing & Iteration](lab-06-monitoring-testing-iteration.md).
 
-➡ Next: **[Lab 4 – Dataverse MCP & Least-Privilege Data Access](lab-03-dataverse-mcp-least-privilege.md)** · See also **[Lab 8 – the same prompt-refinement task in the new UI](lab-07-old-vs-new-ui.md)**
+➡ Next: **[Lab 4 – Subagent & Dataverse MCP](lab-04-subagent-Dataverse-mcp.md)** · See also **[Lab 8 – the same prompt-refinement task in the new UI](lab-08-old-vs-new-ui.md)**

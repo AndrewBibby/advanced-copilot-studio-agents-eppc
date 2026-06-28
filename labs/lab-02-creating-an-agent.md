@@ -71,4 +71,4 @@ Solution-first authoring · prompt-first agent creation · authoring surfaces (I
 - [ ] The four PDF files from `Assets/knowledge-sources` are added as **Knowledge** sources in the agent.
 - [ ] I can locate the equivalent surfaces on the **New UI Build tab**.
 
-➡ Next: **[Lab 3 – Instruction Tuning & Grounding](lab-03-instruction-tuning-grounding.md)** · See also **[Lab 8 – the same setup in the new UI](lab-07-old-vs-new-ui.md)**
+➡ Next: **[Lab 3 – Instruction Tuning & Grounding](lab-03-instruction-tuning-grounding.md)** · See also **[Lab 8 – the same setup in the new UI](lab-08-old-vs-new-ui.md)**
