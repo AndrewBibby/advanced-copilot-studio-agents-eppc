@@ -1,69 +1,146 @@
-# Lab 5 – Authentication, DLP & Entitlement
+# Lab 5 – DLP & Entitlement: See the Risk, Then Lock It Down
 
-**Module 5 · Authentication, DLP & entitlement · ~60 min · 3 exercises (≤20 min each)**
+**Module 5 · DLP governance & OBO authentication · ~20 min · 1 exercise**
 
 ## Objective
 
-Lock down **how your agent authenticates** and **which tools it can reach**, so users only ever see data they're entitled to.
+See how open your environment is (no DLP = full connector freedom), create a restrictive DLP policy, watch it block tools in your agent, then configure OBO so the agent respects user permissions.
 
 ## Prerequisites
 
-- Lab 2 complete (agent with a Dataverse tool).
-- Admin access to the **Power Platform admin center (PPAC)** for the dev environment, or use the shared lab tenant.
+- Lab 4 complete (agent with a Dataverse subagent and MCP tools).
+- Admin access to the **Power Platform admin center (PPAC)** and your agent's editor.
 
 ## Background
 
-"No authentication" is the fastest demo and the worst production choice. The authentication ladder runs **No auth → Entra ID → SSO → On-behalf-of (OBO) → web channel security**, and OBO is the key pattern – the agent calls downstream connectors *as the signed-in user*, so existing M365 permissions and RBAC apply automatically. **DLP** then governs which connectors and endpoints the agent can touch at all. See [`artifacts/dlp-environment-strategy-checklist.md`](../artifacts/dlp-environment-strategy-checklist.md).
+**The pain:** Environments are too open by default. Makers can add any connector—HTTP, Bing, external APIs—without restriction. **The fix:** Design DLP policies with a "block everything, allow-list only what you need" mindset. **The key pattern:** On-behalf-of (OBO) authentication means the agent calls connectors *as the signed-in user*, so existing M365 and Dataverse RBAC apply automatically. Together, DLP + OBO = least privilege.
+
+See [`artifacts/dlp-environment-strategy-checklist.md`](../artifacts/dlp-environment-strategy-checklist.md) for the full governance framework.
+
+⚠️ **Important:** Just because there's no DLP blocking a connector doesn't mean your agent should use it. In dev, you have the freedom to add any tool, but you still need to follow least-privilege principles yourself. If you add HTTP, Bing, or SharePoint to an agent that only needs Dataverse, you've created an unnecessary attack surface—even if DLP isn't enforcing it. **Design for least privilege; DLP is the safety net, not the primary defense.**
 
 ---
 
-### Exercise 3.1 – Require auth & configure On-behalf-of (20 min)
+### Exercise 5.1 – Audit, restrict, and verify (20 min)
 
-*Goal: force Entra sign-in and make tool calls run as the user.*
+*Goal: see the risk of an open environment, apply DLP, and watch your agent's tool options shrink.*
 
-1. In the agent's **Settings → Security**, disable unauthenticated access and require **Microsoft Entra ID** authentication.
-2. For a connector your agent uses, configure **On-behalf-of (OBO)** so calls run as the signed-in user.
-3. Note a test question you'll re-run as a low-privilege user in Exercise 3.3.
+**Part A – See the risk (5 min):**
 
-✅ **Checkpoint:** the agent requires Entra sign-in; a connector is set to OBO.
+1. Go to **Power Platform admin center → Policies → Data policies** for your environment.
+2. Check if a **Data Loss Prevention (DLP) policy** is already applied. If not, you're seeing the default state: **no restrictions**. Any maker can use any connector.
+3. Note: Your agent can currently add HTTP, Bing, Skills, external web APIs, SharePoint, Teams—everything.
 
-### Exercise 3.2 – Apply DLP & endpoint filtering (20 min)
+**Part B – Create a restrictive DLP policy (7 min):**
 
-*Goal: restrict which connectors/endpoints the agent can reach.*
+1. In **PPAC → Policies → Data policies**, select **New Policy**.
+2. Name it (e.g., `Dev - Dataverse Only`).
+3. Under **Connectors**, use the **Block all** approach:
+   - Add **Dataverse** to the **Allow** list.
+   - Add **Teams** and **SharePoint** to the **Allow** list *only if* your agent uses them for knowledge or connectors.
+   - **Block everything else** (HTTP, Bing, Skills, preview connectors, external web APIs).
+4. Add **endpoint filtering** to SharePoint (if allowed) to restrict it to approved sites only.
+5. **Save and apply** the policy to your environment.
 
-1. In **PPAC → Policies → Data policies**, confirm/define a policy for the environment that **blocks connectors the agent doesn't need**.
-2. Apply **endpoint filtering** to restrict a connector (e.g. SharePoint) to approved sites/URLs only.
-3. Block public web / Bing knowledge where it isn't needed.
+**Part C – See the impact in your agent (5 min):**
 
-✅ **Checkpoint:** a DLP policy with endpoint filtering is applied to the environment.
+1. Go back to your agent → **Tools → Add tool**.
+2. Try to add **HTTP** or **Bing** — you should see them **unavailable, blocked by DLP**.
+3. Try to add **Dataverse MCP** — still available (in allow list).
+4. Notice: Your agent's freedom has shrunk to exactly what it needs. This is intentional and good.
 
-### Exercise 3.3 – Restrict channels & verify entitlement (20 min)
+**Part D – Configure OBO on Dataverse connector (3 min):**
 
-*Goal: prove the agent honours user permissions.*
+1. In your agent, find the **Dataverse MCP connector** (or any Dataverse tool).
+2. Open its settings and set authentication to **On-behalf-of (OBO)**.
+3. This means: the agent calls Dataverse *as the signed-in user*, so if you can't access a record, the agent can't either. No extra permission grants needed; RBAC is automatic.
+4. Test: Ask the agent a data question and confirm it returns rows you have access to.
 
-1. Limit publishing channels and restrict knowledge sources to approved endpoints.
-2. Sign in as a **low-privilege test user** and re-run the question from Exercise 3.1.
-3. Confirm the agent **cannot** surface data that user has no rights to. Capture before/after.
+✅ **Checkpoint:** DLP policy is applied and blocks unnecessary connectors; agent's tool options reflect the restricted set; Dataverse connector is OBO-authenticated.
 
-✅ **Checkpoint:** a low-privilege user is demonstrably blocked from data they shouldn't see.
+---
+
+## Why this matters: Separate environments & separate DLPs
+
+- **Dev environment** (this one): Loose for makers to iterate, but *still* restricted to avoid defaults (Dataverse only, block HTTP/Bing).
+- **Test environment**: Production-equivalent DLP + read-only Dataverse + no external publishing.
+- **Internal Prod**: Strict DLP, OBO on all connectors, audit logging enabled.
+- **External Prod** (if needed): Separate tier with Direct Line allowed (isolated from tenant policy), stricter knowledge scoping, dedicated capacity.
+
+The *same* DLP policy cannot safely cover both dev makers and external-facing agents. That's why you need separate environments—each with its own DLP posture, matching its audience and risk.
+
+---
+
+## Common pitfalls & things to remember
+
+- **DLP is environment-scoped, not agent-scoped.** The policy affects *all* agents in that environment. Don't assume it's protecting only one agent.
+- **Managed Environment must be on *before* adding MCP.** If you add MCP first, then enable Managed Environment, the tools can disappear. Order matters.
+- **OBO doesn't work on all connectors.** HTTP, Bing, Skills, and preview connectors often don't support On-behalf-of. Using them means shared/admin credentials—you lose user permission inheritance. Choose intentionally.
+- **Policy promotions fail silently.** An agent works in Dev (loose DLP), but breaks in Test (strict DLP) because a tool is blocked. Always run **Solution Checker** before promoting to a stricter environment.
+- **Start restrictive, add only what works.** Don't start with "allow everything" and hope to tighten later. By then, 20 agents are using HTTP incidentally. Begin with Dataverse-only, test thoroughly, then add connectors.
+- **Audit logging isn't on by default.** If something breaks, you have no trail. Enable it or document why you haven't.
+- **Align DLP across tiers, document the gaps.** Dev can be looser than Test/Prod, but those gaps should be intentional and documented.
+
+---
+
+## Connector reference matrix for Copilot Studio
+
+Use this matrix to decide what to allow and block in your DLP policies. Start with the strict baseline; add only what your agent actually needs.
+
+### Default recommendations by environment tier
+
+| Connector | Dev | Test | Internal Prod | External Prod | Notes |
+|-----------|-----|------|---------------|---------------|-------|
+| **Dataverse** | ✅ Allow | ✅ Allow | ✅ Allow | ✅ Allow | Primary data source; always required |
+| **SharePoint** | ✅ Allow (any site) | ⚠️ Filtered | ⚠️ Filtered | ⚠️ Filtered (external sites only) | Use endpoint filtering to restrict to approved sites |
+| **Teams** | ✅ Allow | ⚠️ Allow | ⚠️ Read-only | ❌ Block | User context; tighten read-only in Prod |
+| **Outlook / OneDrive** | ✅ Allow | ⚠️ Allow | ⚠️ Allow | ❌ Block | For user identity/context; not needed externally |
+| **HTTP** | ❌ Block | ❌ Block | ❌ Block | ❌ Block | Use specific certified connectors instead |
+| **Bing / Web Search** | ❌ Block | ❌ Block | ❌ Block | ❌ Block | Uncontrolled knowledge; no RBAC |
+| **Skills / Direct connector** | ❌ Block | ❌ Block | ❌ Block | ❌ Block | Hard to audit; use certified connectors |
+| **Social media** (Twitter, FB) | ❌ Block | ❌ Block | ❌ Block | ❌ Block | Data exfiltration risk |
+| **Preview connectors** | ⚠️ Allow (controlled) | ❌ Block | ❌ Block | ❌ Block | Dev only; audit before using |
+| **Custom connectors** | ⚠️ Allow (reviewed) | ❌ Block | ❌ Block (unless approved) | ❌ Block | Requires explicit approval & audit trail |
+
+**Legend:**  
+✅ Allow  |  ⚠️ Conditional / filtered  |  ❌ Block
+
+### Why the tiers differ
+
+- **Dev**: Makers iterate; some looseness acceptable. Still block HTTP, Bing, Skills to enforce good habits.
+- **Test**: Mirrors Prod to catch agent failures early. Endpoint filtering enforced; no global SharePoint access.
+- **Internal Prod**: RBAC enforced, OBO required, audit logging on. No external data sources.
+- **External Prod**: Isolated from tenant policy (Direct Line allowed here). No internal SharePoint/Teams. Stricter knowledge scoping. Dedicated capacity.
+
+### How to apply endpoint filtering (example: SharePoint)
+
+If your agent needs SharePoint for knowledge:
+1. Add **SharePoint** to Allow list
+2. Click **Endpoint filtering** 
+3. Select **Approved sites** 
+4. Add specific site URLs (e.g., `https://contoso.sharepoint.com/sites/KnowledgeBase`)
+5. Block everything else
+
+This prevents the agent from accessing personal OneDrive files or unrelated sites.
 
 ---
 
 ## Key concepts
 
-Microsoft Entra ID · SSO · on-behalf-of (OBO) · DLP policies · endpoint filtering · channel restrictions · least privilege · M365 permission inheritance · Entra Agent ID.
+DLP policies · block-all mindset · endpoint filtering · On-behalf-of (OBO) authentication · RBAC inheritance · least privilege · four-tier environment strategy · connector scoping.
 
 ## Success criteria
 
-- [ ] Unauthenticated access is **off**; the agent requires Entra sign-in.
-- [ ] A connector runs **on-behalf-of** the user and respects their permissions.
-- [ ] A **DLP policy with endpoint filtering** is applied to the environment.
-- [ ] A low-privilege user is demonstrably **blocked** from data they shouldn't see.
+- [ ] You've seen the **default open state** (no DLP = all connectors available).
+- [ ] You've created a **restrictive DLP policy** (block all except Dataverse + essentials).
+- [ ] Blocked connectors (HTTP, Bing) are now **unavailable in the agent's tool picker**.
+- [ ] Dataverse connector is set to **On-behalf-of** authentication.
+- [ ] Test confirms the agent respects your Dataverse access level.
 
 ## Stretch goals
 
-- Map the **four-tier environment strategy** (Dev / Test / Internal Prod / External Prod) to your own org and note the DLP differences – especially the **Direct Line** conflict for external-facing agents.
-- Estimate the agent's **Copilot Credits** with the usage estimator and identify the biggest cost lever.
-- Enable a **Managed Environment** sharing control and observe what it prevents.
+- Compare your current DLP policy to a **Test environment policy** — what's tighter in Test? (Hint: no HTTP, no external web, solution checker enforced.)
+- Map the **four-tier strategy** to your org: where do you need Direct Line, and does it conflict with tenant DLP?
+- Document the **exception list** — if you had to allow SharePoint or Teams, what endpoints and why?
 
-➡ Next: **[Lab 6 – Workflow Approval Gates](lab-05-workflow-approval-gates.md)**
+➡ Next: **[Lab 6 – Workflow Approval Gates](lab-06-workflow-approval-gates.md)**

@@ -1,71 +1,82 @@
-# Lab 6 – Workflow Approval Gates
+# Lab 6 – Workflow Approval Gates: HITL for Critical Actions
 
-**Module 6 · Workflow approval gates · ~45 min · 3 exercises (≤20 min each)**
+**Module 6 · Human-in-the-loop (HITL) approval gates · ~20 min · 1 exercise**
 
 ## Objective
 
-Insert a **workflow decision point** so the agent pauses before a critical action, using a **Request for Information (RFI)** action and an **AI Approval** stage with a human override.
+Wire a **workflow approval gate** so the agent pauses before a critical write action and waits for human review before proceeding.
 
 ## Prerequisites
 
-- Lab 2 complete (an agent with at least one tool/action worth gating).
-- Access to **Workflows** in Copilot Studio and an Outlook mailbox to receive the RFI request.
+- Lab 4 complete (an agent with a Dataverse MCP tool that can create/update records).
+- Access to **Workflows** in Copilot Studio and an Outlook mailbox to receive approval requests.
 
 ## Background
 
-Automation should stop and ask for review wherever judgment must gate the process – claims triage, finance verification, quality sign-off, legal review. **RFI** pauses a workflow, emails a named reviewer, collects structured input, then resumes. **AI Approvals** auto-approve low-risk requests and escalate the rest, while a human keeps final authority with the reason captured for audit. Build checkpoints around any create/update/delete the agent can perform (recall the Dataverse write tools from Lab 2).
+Any create/update/delete the agent performs should have a **human checkpoint** — either pre-approval or post-audit, depending on risk. The **Request for Information (RFI)** action is a workflow node that pauses, emails a named reviewer, collects structured input, and resumes when approved. This is the simplest HITL pattern: agent → workflow → human approval → write.
 
 ---
 
-### Exercise 4.1 – Build a workflow with a Request for Information (20 min)
+### Exercise 6.1 – Build and test an approval gate workflow (20 min)
 
-*Goal: pause automation and ask a named human.*
+*Goal: create a workflow the agent can invoke that pauses for human approval.*
 
-1. Open **Flows** → create a **New workflow** (the redesigned canvas with node-level testing) the agent can call.
-2. Add a **Request for Information** action. Configure:
-   - the named reviewer(s),
-   - structured input types (text / number / email / yes-no / date; single- or multi-select; required),
-   - what happens on response. Requests go via Outlook and the **first responder wins**.
-3. Test just that node to confirm the email is sent.
+1. **Create the workflow:**
+   - Open **Flows** → **New workflow** (redesigned canvas).
+   - Name it `Account Write Approval`.
+   - Add input parameters: `accountName` (text), `accountIndustry` (text), `requestedBy` (email).
 
-✅ **Checkpoint:** the workflow pauses and sends an RFI email to a human.
+2. **Add the approval gate:**
+   - Insert a **Request for Information** action.
+   - Configure:
+     - **Reviewer:** your email (or a test reviewer)
+     - **Input fields:** 
+       - `Approve account creation?` (Yes/No)
+       - `Comments?` (text, optional)
+     - **Timeout:** 1 hour (default)
+   - The RFI pauses the workflow and sends an email to the reviewer with the structured input form.
 
-### Exercise 4.2 – Branch on the human response (15 min)
+3. **Branch on the response:**
+   - Add a **Condition** after the RFI: `If response == Yes`
+   - **Yes branch:** Call **Dataverse connector** → Create a record in Accounts table with the inputs.
+   - **No branch:** Stop and return "Request rejected."
+   - Capture the reviewer's comments in the final response message for audit.
 
-*Goal: route the flow on approve vs reject.*
+4. **Test end-to-end:**
+   - Publish the workflow.
+   - Go to your agent, manually trigger the workflow by calling it with test parameters (or add it as an agent tool).
+   - Check your Outlook: you should receive an RFI email with the Yes/No buttons and comment field.
+   - Click **Approve** → the workflow continues, creates the account, and returns success to the agent.
+   - (Optional) Test **Reject** to confirm the No branch works.
 
-1. Add a condition on the RFI response.
-2. **Approved →** continue to the gated action (e.g. the Dataverse `create_record`/`update_record`).
-3. **Rejected →** stop and message the user.
+✅ **Checkpoint:** The workflow pauses for human approval; the account write only happens on approval; the reviewer's response and comments are captured for audit.
 
-✅ **Checkpoint:** the gated write only happens on the approved branch.
+---
 
-### Exercise 4.3 – Add an AI Approval stage & test end-to-end (15 min)
+## Why this matters: HITL (Human-In-The-Loop)
 
-*Goal: auto-handle the routine, escalate the exceptions, keep a human override.*
-
-1. Add an **AI Approval** stage: give it decision criteria and inputs (a document/knowledge), let it decide *with an explanation*, auto-approve low-risk and escalate exceptions to a person.
-2. Trigger the flow from the agent, respond to the RFI email, and confirm the branch and the captured approval explanation.
-
-✅ **Checkpoint:** the AI Approval records a reason/explanation for audit, and a human can override.
+- **Automation ≠ full autonomy.** Writes (create/update/delete) should have a human gate, especially when money, contracts, or compliance are involved.
+- **RFI is the minimal HITL.** Email approval form, first responder wins, structured input, audit trail. No fancy AI approval needed—the human is the decider.
+- **Async approval.** The workflow pauses; the human reviews on their schedule; the workflow resumes when they respond. The agent doesn't block.
 
 ---
 
 ## Key concepts
 
-Request for Information (RFI) · structured inputs · AI Approvals · multi-stage routing · human override · escalation · Express Mode (2-minute limit) · node-level testing.
+Request for Information (RFI) · human-in-the-loop (HITL) · approval branching · structured input · audit trail · workflow gates · async approval.
 
 ## Success criteria
 
-- [ ] The workflow **pauses** and sends an RFI to a human before the gated action.
-- [ ] The flow **branches correctly** on approve vs. reject.
-- [ ] The AI Approval stage records a **reason/explanation** for audit.
-- [ ] The gated Dataverse write only happens **after** approval.
+- [ ] Workflow pauses and **sends an RFI email** to a human.
+- [ ] The flow **branches correctly** on approve (create) vs. reject (stop).
+- [ ] **Comments are captured** from the reviewer for audit.
+- [ ] The agent can **invoke the workflow** and show the approval outcome.
 
 ## Stretch goals
 
-- Add a second reviewer and observe first-responder-wins behaviour.
-- Add an "ask vs. inform" follow-up and note the difference (ask = two-way and waits; inform = one-way).
-- Wire the approval outcome back into the agent's reply so the user sees the decision and reason.
+- Add a second reviewer and observe **first-responder-wins** behaviour (first approval ends the flow).
+- Add a **timeout** and handle the "no response after 24 hours" case (auto-reject or escalate).
+- Wire the **approval outcome back into the agent's reply** so the end user sees "Your account request was approved on [date] by [reviewer]."
+- Explore **AI Approvals** to auto-approve routine requests and escalate exceptions.
 
 ➡ Next: **[Lab 7 – Monitoring, Testing & Iteration](lab-06-monitoring-testing-iteration.md)** · See also **[Lab 8 – the same HITL task in the new UI](lab-07-old-vs-new-ui.md)**

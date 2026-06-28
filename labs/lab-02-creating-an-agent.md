@@ -26,7 +26,7 @@ Create your first agent in Copilot Studio using a natural-language prompt, confi
    - Select **Create**.
 3. Navigate back to <https://copilotstudio.microsoft.com> and click the **settings wheel** to select your new solution.
 
-![alt text](../Assets/E1_1.png)
+![alt text](../Assets/Images/E1_1.png)
 
 4. Select **Create** and describe your agent using one of the prompts below, or use your own use case:
 
@@ -54,7 +54,7 @@ Assist bankers in identifying, investigating, and managing potential fraud and a
 
 **New UI equivalent (optional):** In Copilot Studio (<https://copilotstudio.microsoft.com>) → **New experience**, do the same setup on the **Build** tab. Note the agent is created without a prompt — you configure it directly on the Build tab.
 
-![alt text](../Assets/E1_2.png)
+![alt text](../Assets/Images/E1_2.png)
 
 ✅ **Checkpoint:** you have a solution and an agent with all authoring surfaces accessible.
 

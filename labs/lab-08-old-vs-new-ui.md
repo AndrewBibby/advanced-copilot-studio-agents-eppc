@@ -1,93 +1,94 @@
-# Lab 8 – Old UI → New UI: The Same Tasks in the New Agent Experience
+# Lab 8 – Old UI → New UI: Quick Concept Map
 
-**Cross-cutting · ~60 min · 3 exercises (≤20 min each)**
+**Reference · ~20 min · 1 comparison exercise**
 
 ## Objective
 
-Re-create two earlier labs in the **new Copilot Studio agent experience** and see exactly where it differs from the Classic UI:
-
-- **Lab 1** (refine prompts at agent & topic level) → done with **Instructions + a Skill** instead of topics.
-- **Lab 4** (workflow checkpoint) → done with the **new Workflows designer + agent node** instead of Classic agent flows/triggers.
-
-You'll leave able to decide *which experience to use for which job*.
+See where your Classic UI skills map to the **new Copilot Studio agent experience** so you can decide which to use.
 
 ## Prerequisites
 
-- Labs 1 and 4 complete in the Classic experience (so you have a "before" to compare against).
-- A tenant where the new experience is available. **Note:** there is **no migration path** between Classic and New – you'll build a *new* agent here, not convert your existing one.
+- At least one lab complete in Classic experience (so you have a reference point).
+- A tenant where the new experience is available. **Note:** there is **no migration path** — you'll build a *new* agent here, not convert an existing one.
 
-## Background – what actually changed
+## Background – concept mapping
 
-The new experience replaces topics, triggers and node-based conversation logic with a **single agent object driven by instructions and reasoning**, all on one consolidated surface.
+The new experience consolidates topics, triggers, and branching logic into **Instructions + reasoning** on a single authoring surface. Here's what moved where:
 
-| | Classic experience | New experience |
-|---|---|---|
-| Left nav / tabs | **Topics, Knowledge, Actions, Settings** (separate) | **Build · Preview · Evaluate · Monitor** (one surface) |
-| Behaviour driven by | Explicit topics, triggers, branching nodes | **Instructions + reasoning** |
-| Reusable behaviour | A Topic | A **Skill** (reusable structured behaviour) |
-| Triggers / automation | Agent triggers + agent flows | **Workflows** (redesigned designer, node-level testing) + agent node |
-| Sub-agents | Child agents | **Connected agents** |
-| Orchestration | Classic *or* generative (configurable) | Enhanced runtime for all agents (not switchable) |
-| Evaluate / Monitor | Separate step | Built into the authoring surface |
+| Classic concept | New equivalent |
+|---|---|
+| **Topics** | **Instructions** (agent-level) + **Skills** (reusable structured tasks) |
+| **Per-topic custom instruction** | **Skill** (write a `.md` file or add directly under Tools & skills) |
+| **Topic routing (if/then branches)** | **Reasoning** (the agent decides based on instructions; no explicit nodes) |
+| **Agent triggers / agent flows** | **Workflows** (redesigned designer + node-level test) + **agent node** (inline or published) |
+| **Child agents** | **Connected agents** (call published agents from a workflow) |
+| **Knowledge tabs (per topic)** | **Knowledge** (agent-level, scoped via instructions) |
+| **Actions** | **Tools and skills** (connectors, HTTP, custom skills, inline Python) |
+| **Settings / Orchestration mode** | **Model** settings (reasoning tier) |
+| **Monitor tab** | **Monitor** tab (built into authoring) |
 
-> **How to tell which you're in:** Classic shows **Topics / Knowledge / Actions / Settings** in the left nav. New shows **Build / Preview / Evaluate / Monitor** tabs at the top. Switch with **Try it now** on the Classic home page; switch back with the **New experience** toggle.
+> **Toggle between them:** Classic shows **Topics / Knowledge / Actions / Settings** in left nav. New shows **Build / Preview / Evaluate / Monitor** tabs. Switch with **Try it now** on Classic home page.
 
-> **The trade-off:** Classic gives deterministic, node-by-node control (best for compliance-critical, branching flows). New is faster to build and reasons from natural-language instructions, but is less explicitly controllable. Choose on your need for **control vs. speed**.
+> **Control vs. speed:** Classic = deterministic step-by-step (best for compliance). New = faster to build from instructions, but less node-level control. Decide *before* you invest in building.
 
 ---
 
-### Exercise 6.1 – Create a new-experience agent & set up Build (15 min)
+### Exercise 8.1 – Tour the new Build surface and map one task (20 min)
 
-*Goal: get oriented on the single-surface model.*
+*Goal: see the new layout and confirm concepts move where you expect.*
 
-1. On the Classic home page, select **Try it now** to enter the new experience, then **Create** a new agent. Describe its purpose in natural language when prompted.
-2. **Before first save**, set the **language** and default **Solution** (still important in the new UI).
-3. On the **Build** tab, find the five components: **Instructions**, **Knowledge**, **Tools and skills**, **Model**, **Connected agents**. Add the *same narrow knowledge source* you used in Lab 1.
+1. **Enter the new experience:**
+   - From Classic home, select **Try it now**.
+   - **Create** a new agent (describe its role in a sentence).
 
-✅ **Checkpoint:** you can name where each Classic concept now lives on the Build tab.
+2. **Locate the five Build components:**
+   - **Instructions:** paste the Role / Objective / Tool-usage / Reasoning pattern from [`artifacts/agent-instructions-template.md`](../artifacts/agent-instructions-template.md).
+   - **Knowledge:** upload the same knowledge source you used in a Classic lab.
+   - **Tools and skills:** add a connector (e.g., Dataverse) or a simple HTTP action.
+   - **Model:** observe the reasoning tier setting (equivalent to Classic Orchestration mode).
+   - **Connected agents:** leave empty for now (this is how you call other agents).
 
-### Exercise 6.2 – Redo Lab 1 with Instructions + a Skill (20 min)
+3. **Test and compare:**
+   - Click **Preview** and ask a question that requires your knowledge + the tool.
+   - Compare the answer quality / citations / reasoning to a Classic agent doing the same job.
+   - Note: answers cite sources without you wiring per-topic citation rules (the new runtime infers it from instructions).
 
-*Goal: achieve Lab 1's outcome without topics.*
+✅ **Checkpoint:** you mapped Classic concepts to the new surface and saw an end-to-end query. You can now assess: "For my next build, which experience fits my control/speed need?"
 
-1. In **Instructions**, apply the same Role / Objective / Tool-usage / Reasoning & grounding pattern from [`artifacts/agent-instructions-template.md`](../artifacts/agent-instructions-template.md). In the new experience, instructions + reasoning replace topic routing.
-2. Where Lab 1 used a **per-topic custom instruction**, create a **Skill** instead – a reusable structured behaviour for that specific path (add it under **Tools and skills**; you can write it directly or import a `.md` skill).
-3. Apply the grounding intent ("use only specified knowledge", cite sources) through the instructions and knowledge scope, then **Preview** and ask your 5 Lab 1 questions.
+**Bonus:** If you want to compare HITL workflows, see **Exercise 6.3 comparison** below.
 
-✅ **Checkpoint:** answers cite sources and refuse out-of-scope questions – same outcome as Lab 1, achieved with Instructions + a Skill rather than topics.
+---
 
-**Compare:** Classic = topic with Generative Answers custom instructions. New = agent Instructions + a Skill. Note which felt faster, and which gave you more precise control.
+## Quick reference: HITL workflows in the new UI (bonus comparison)
 
-### Exercise 6.3 – Redo Lab 4 with a Workflow + agent node (20 min)
+If you want to quickly see how Classic HITL workflows map to the new experience:
 
-*Goal: achieve Lab 4's HITL outcome in the new designer.*
+- **Classic:** agent trigger → topic routing → branching nodes → Dataverse action
+- **New:** Workflow (redesigned designer) → RFI node (human gate) → Agent node (inline or published) → output
 
-1. Go to **Flows** → **New workflow** (the redesigned designer with node-level testing). This is the new home for what Classic did with agent triggers/flows.
-2. Add a **Request for Information** action for the human checkpoint (same RFI behaviour as Lab 4 – Outlook, structured inputs, first-responder-wins), and branch on the response.
-3. Add an **Agent node**: either call a published agent or build an **inline agent for this workflow** (give it instructions, optionally tools/knowledge, and pick the output shape – text or structured). The agent node runs as the **triggering user**, so permissions and least-privilege are honoured automatically.
-4. **Preview/test** individual nodes, then run end-to-end.
-
-✅ **Checkpoint:** the workflow pauses for a human, then hands a step to an agent node – the Lab 4 outcome, built on the new Workflows surface.
-
-**Compare:** Classic = agent flow + topic-driven handoff. New = Workflow with RFI + agent node, node-level testing, and structured output tokens for downstream steps.
+The agent node runs as the **triggering user**, so OBO auth and permission inheritance work automatically (no shared credentials).
 
 ---
 
 ## Key concepts
 
-New agent experience (Build / Preview / Evaluate / Monitor) · Instructions + reasoning replacing topics · Skills (reusable structured behaviour) · Workflows vs. agent flows · agent node (inline vs. published, runs as triggering user) · Connected agents replacing child agents · no migration path · control vs. speed.
+Concept mapping (Classic → New) · Instructions + reasoning · Skills (reusable structured tasks) · Build surface (5 components) · Workflows designer · agent node · Connected agents · no migration path · control vs. speed trade-off.
 
 ## Success criteria
 
-- [ ] You built a **new-experience** agent and located each Classic concept on the Build tab.
-- [ ] You reproduced **Lab 1's** outcome with **Instructions + a Skill** (no topics).
-- [ ] You reproduced **Lab 4's** HITL outcome with a **Workflow + RFI + agent node**.
-- [ ] You can state, for a given scenario, whether you'd choose Classic or New and why.
+- [ ] You navigated the new Build surface and mapped 5 Classic concepts to their new homes.
+- [ ] You built a preview-worthy agent in the new experience with knowledge and a tool.
+- [ ] You can answer: "For my next project—Classic or New, and why?"
 
-## Decision guide – which experience for which job
+## When to choose which experience
 
-- **Choose New** for fast, reasoning-driven agents over M365 data, multi-step orchestration, and where built-in Evaluate/Monitor helps the loop.
-- **Choose Classic** when you need deterministic, auditable step-by-step control (compliance-critical, regulated, heavily branched flows), or a feature only Classic currently exposes.
-- **Remember:** no migration path, and Classic agents don't appear as connected agents in New (or vice-versa). Decide the experience *before* you invest in building.
+| Your need | Choose |
+|---|---|
+| Fast build from instructions, reasoning-driven, M365 data focus | **New** |
+| Deterministic step-by-step control, compliance audit trail, heavily branched flows | **Classic** |
+| HITL workflows with human gates + agent handoff | **New Workflows** (better node testing) |
+| Complex topic-driven routing with per-topic custom logic | **Classic** |
 
-➡ Related: **[Lab 1](lab-01-agent-design.md)** · **[Lab 6](lab-05-workflow-approval-gates.md)** · **[agenda & UI orientation](../docs/agenda.md)**
+**Key reminder:** No migration path between Classic and New. Decide *before* building.
+
+➡ Related: **[Lab 1 – Agent Design](lab-01-agent-design.md)** · **[Lab 6 – Approval Gates](lab-06-workflow-approval-gates.md)** · **[Agenda](../docs/agenda.md)**
