@@ -55,7 +55,7 @@ The new experience consolidates topics, triggers, and branching logic into **Ins
 
 ✅ **Checkpoint:** you mapped Classic concepts to the new surface and saw an end-to-end query. You can now assess: "For my next build, which experience fits my control/speed need?"
 
-**Bonus:** If you want to compare HITL workflows, see **Exercise 6.3 comparison** below.
+**Bonus:** If you want to compare HITL (Human-in-the-Loop) workflows, see the **bonus comparison** below.
 
 ---
 

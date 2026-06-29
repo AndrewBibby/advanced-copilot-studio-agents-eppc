@@ -109,12 +109,12 @@
 
 **Core ideas**
 
-- **Copilot Studio Kit** – batch testing, test types (response/attachment/generative match), rubrics for scoring generative answers, Compliance Hub & KPIs.
+- **Copilot Studio Kit** – batch testing, test types (response/attachment/generative match), rubrics (a rubric is a scoring guide with clear criteria) for scoring generative answers, Compliance Hub & KPIs.
 - **Eval gates in CI/CD** – run Kit test sets in a pipeline; fail the build when scores drop below threshold; pair with `pac` ALM commands.
 - **Monitor in two places** – per-agent Copilot Studio analytics and fleet-wide Agent 365 observability.
 - **The agentic improvement loop** – Analyze → Adjust → Re-test → Ship & repeat.
 
-**Lab 7 (~20 min):** (Pending condensing to 20 min; currently ~60 min across 3 exercises.)
+**Lab 7 (~20 min):** Build a concrete baseline test (pass/fail), then define ownership, escalation, and a maintenance cadence for operational readiness.
 
 ➡ **[Lab 7 – Monitoring, Testing & Iteration](../labs/lab-06-monitoring-testing-iteration.md)**
 

@@ -1,4 +1,4 @@
-# Lab 6 – Evaluation & Operational Readiness
+# Lab 7 – Monitoring, Testing & Iteration
 
 **Module 5 · Agent testing, evaluation & operations · ~20 min · 2 exercises (10 min each)**
 
@@ -8,7 +8,7 @@
 
 ## Prerequisites
 
-- You've completed Labs 1–5 and have a working agent with instructions, knowledge, tools, and (ideally) a HITL gate.
+- You've completed Labs 1–5 and have a working agent with instructions, knowledge, tools, and ideally a HITL (Human-in-the-Loop) gate.
 - You have the agent available to test interactively in the Copilot Studio preview pane.
 - Familiarity with your organization's software delivery and governance structures.
 
@@ -23,7 +23,7 @@ Once it's live, the second big question is: **Who owns maintaining it?** Agents 
 
 ---
 
-### Exercise 6.1 – Build and run a concrete test baseline (10 min)
+### Exercise 7.1 – Build and run a concrete test baseline (10 min)
 
 *Goal: establish pass/fail criteria for your agent before it goes anywhere.*
 
@@ -59,7 +59,7 @@ Once it's live, the second big question is: **Who owns maintaining it?** Agents 
 
 ---
 
-### Exercise 6.2 – Design how you'll operate agents at scale (10 min)
+### Exercise 7.2 – Design how you'll operate agents at scale (10 min)
 
 *Goal: think operationally – who owns it, how do you maintain it, when do you retire it?*
 
@@ -111,13 +111,13 @@ Agent testing · baseline test questions · pass/fail criteria · HITL gate vali
 
 ## Success criteria
 
-**Exercise 6.1 (Testing):**
+**Exercise 7.1 (Testing):**
 - [ ] You defined **3–5 concrete test questions** that represent your agent's core job.
 - [ ] You **ran each test** and documented pass/fail results.
 - [ ] You established a **pass/fail gate** (e.g., "all quality tests must pass before moving to Test environment").
 - [ ] You identified any blockers (HITL not working? Out-of-scope answers?) before production.
 
-**Exercise 6.2 (Operational Model):**
+**Exercise 7.2 (Operational Model):**
 - [ ] You documented **who owns** your agent (name, team, role).
 - [ ] You defined the **escalation path** (if something breaks, who gets contacted and when?).
 - [ ] You sketched a **monthly maintenance sprint** checklist (usage review, quality check, decision gate).

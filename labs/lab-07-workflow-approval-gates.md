@@ -1,4 +1,4 @@
-# Lab 6 – Workflow Approval Gates: HITL for Critical Actions
+# Lab 6 – Workflow Approval Gates: Human-in-the-Loop for Critical Actions
 
 **Module 4 · Human-in-the-loop (HITL) approval gates · ~20 min · 1 exercise**
 
