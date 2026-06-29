@@ -1,4 +1,4 @@
-# Lab 7 – Monitoring, Testing & Iteration
+# Lab 6 – Monitoring, Testing & Iteration
 
 **Module 5 · Agent testing, evaluation & operations · ~20 min · 2 exercises (10 min each)**
 
