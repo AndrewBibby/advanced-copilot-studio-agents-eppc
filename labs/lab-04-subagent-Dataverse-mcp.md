@@ -32,7 +32,7 @@ A **subagent** is a specialist child agent designed to do one job. It's tied to 
 *Goal: build a single-table subagent, connect it to Dataverse via MCP, and test one query.*
 
 1. **Create the subagent:**
-   - Navigate to **Agents** → **New agent**.
+   - In your orchstrastor agent, navigate to **Agents** → **New child agent**.
    - Name it clearly (e.g., `Account Specialist`) and give it a tight role: *"You are an Account Specialist. Your single job is to retrieve and summarize Account records from Dataverse based on user questions. Always search the schema first, then query. Never invent data."*
    - Save it in the same **solution** as your orchestrator agent.
 
@@ -50,13 +50,17 @@ A **subagent** is a specialist child agent designed to do one job. It's tied to 
    - **Turn off** `create_record`, `update_record`, `delete_record`, and any schema-altering tools.
 
 4. **Test end-to-end:**
-   - Open the **Test panel** and ask a question tied to Accounts (e.g., "Show me all active accounts in the West region" or "What is the industry of account ABC?").
+   - Open the **Test panel** and ask a question tied to Accounts (e.g., "Show me all active accounts in the Redmond region" or "What is the industry of account ABC?").
    - Confirm the trace shows:
      1. `search` or `describe` (agent exploring the schema)
      2. `read_query` (agent querying Accounts)
      3. A real row returned (not a guessed answer)
 
-✅ **Checkpoint:** The subagent retrieves real data via MCP; only read tools are exposed; you can see the full trace in Test.
+5. **Publish the subagent:**
+   - Select **Publish** in the agent.
+   - Wait for the publish confirmation to complete before continuing.
+
+✅ **Checkpoint:** The subagent retrieves real data via MCP; only read tools are exposed; and the subagent is published.
 
 ---
 
@@ -70,6 +74,8 @@ Subagent architecture · scope (one table, one responsibility) · least-privileg
 - [ ] Dataverse MCP tools appear in the tool list; **only read tools are allowed**.
 - [ ] A test query returns **real rows from Dataverse**, not a fabricated answer.
 - [ ] The test trace shows **schema discovery then query execution**.
+- [ ] The subagent is **published** after testing.
+- [ ] The parent agent can **delegate account lookups** to this subagent.
 - [ ] You can articulate why subagents fail when scoped too broadly.
 
 ## Stretch goals
