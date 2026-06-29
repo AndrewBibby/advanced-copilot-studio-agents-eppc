@@ -1,4 +1,4 @@
-# Lab 7 – Evaluation & Operational Readiness
+# Lab 6 – Evaluation & Operational Readiness
 
 **Module 5 · Agent testing, evaluation & operations · ~20 min · 2 exercises (10 min each)**
 
