@@ -61,9 +61,8 @@ Most hallucinations come from vague instructions and over-broad knowledge, not f
 
 1. In **Generative AI settings**, turn on **Use only specified knowledge**.
 2. Set the **Moderation level** (raise for stricter, more conservative answers).
-3. Enable **Return citations**.
-4. Add an explicit **fallback** message for "no good answer found" in a Generative Answers topic.
-5. Re-ask your 3 baseline questions and confirm citations now appear. Confirm the out-of-scope question returns an honest "I can't answer that" rather than a fabricated answer.
+3. Add an explicit **fallback** message for "no good answer found" in a Generative Answers topic.
+4. Re-ask your 3 baseline questions and confirm citations now appear. Confirm the out-of-scope question returns an honest "I can't answer that" rather than a fabricated answer.
 
 ✅ **Checkpoint:** factual answers show a citation; an out-of-scope question no longer invents an answer.
 
