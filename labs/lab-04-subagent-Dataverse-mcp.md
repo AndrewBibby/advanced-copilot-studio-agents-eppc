@@ -83,5 +83,6 @@ Subagent architecture · scope (one table, one responsibility) · least-privileg
 - Add a second specialist subagent for a different table (e.g., `Contact Specialist`) and manually invoke both from the orchestrator's Test panel.
 - Enable one write tool (e.g., `create_record`) and add a **HITL (Human-in-the-Loop) checkpoint** in the parent to approve writes before delegation.
 - Measure query cost and latency; compare MCP vs. other Dataverse retrieval patterns (Knowledge, Search Query, Prompt Tool).
+- If you want to learn more about workflows in the new UI, complete **[Lab 7 – Monitoring, Testing & Iteration](lab-06-monitoring-testing-iteration.md)**.
 
 ➡ Next: **[Lab 5 – Auth, DLP & Entitlement](lab-05-auth-dlp-entitlement.md)**

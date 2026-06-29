@@ -80,6 +80,10 @@ Concept mapping (Classic → New) · Instructions + reasoning · Skills (reusabl
 - [ ] You built a preview-worthy agent in the new experience with knowledge and a tool.
 - [ ] You can answer: "For my next project—Classic or New, and why?"
 
+## Stretch goals
+
+- If you want to learn more about using workflows in the new UI, complete **[Lab 7 – Monitoring, Testing & Iteration](lab-06-monitoring-testing-iteration.md)**.
+
 ## When to choose which experience
 
 | Your need | Choose |
